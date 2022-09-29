@@ -93,7 +93,7 @@
         </div>
 
  <!-- Footer -->
-        <footer style="background-color : #2f2c2c; position:fixed;bottom:0;width: 100%; bottom:0px; left:0px; right:0px; position:relative; margin-top: 1px;">
+        <footer style="background-color : #2f2c2c; position:fixed;width: 100%; bottom:0px; left:0px; right:0px; position:relative">
             <div class="container mt-3">
                 <div class="row col-lg-12">
                     <table class="table table-borderless">
