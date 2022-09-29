@@ -1,0 +1,379 @@
+﻿
+/*navbar masterpage*/
+nav{
+    /*overflow: auto;*/
+}
+.navbar{
+    padding: 0;
+}
+
+.navbar .nav .nav-link {
+    padding: 1em;
+}
+.navbar .nav .nav-item{
+    position: relative;
+}
+
+.navbar .nav .nav-item::after {
+    position: absolute;
+    bottom:0;
+    left:0;
+    right:0;
+    content:'';
+    background-color: black;
+    width: 0;
+    height: 4px;
+    margin: 0 auto;
+    transition: all .5s;
+}
+
+    .navbar .nav .nav-item:hover::after {
+      width: 100%;
+    }
+
+.table  tr{
+    color:#ffffff;
+    font-size: 16px;
+    font-weight:100;
+}
+/*Homepage*/
+#backgroundImage {
+    background-image: url('Images/UON Building.jpg');
+    opacity: 0.7;
+    width: 100vw;
+    margin-top: 30px;
+    margin-bottom: -20px;
+    height: 100vh;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: -1;
+} 
+
+.text-box{
+    width: 90%;
+    color: #000;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.text-box h1{
+    font-size: 62px;
+}
+
+.text-box p{
+    margin: 10px 0 40px;
+    font-size: 14px;
+    color:#000;
+}
+*{
+    font-family: Roboto, sans-serif;
+}
+
+.imageBtn{
+    display: inline-block;
+    text-decoration: none;
+    color: #000;
+    border: 1px solid #000;
+    padding: 12px 34px;
+    font-size: 13px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+}
+.imageBtn:hover{
+    border: 1px solid #0d2146;
+    background: #fff;
+    transition: 1s;
+}
+@media(max-width: 700px) {
+
+    .text-box h1 {
+        font-size: 35px;
+    }
+    
+    .nav-link {
+        display: block;
+    }
+    
+     .nav{
+        position: absolute;
+        background: #fff;
+        height: 100vh;
+        width: 100px;
+        top: 0;
+        color: #fff;
+        right: 0;
+        text-align: left;
+        z-index: 2;
+       
+    }
+     #backgroundImage{
+         overflow:hidden
+     }
+
+
+}
+
+.course{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+}
+h1{
+    font-size: 36px;
+    font-weight: 600;
+}
+p{
+    color:#777;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px;
+}
+.row{
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+.course-col{
+    flex-basis: 31%;
+    background: #fff3f3;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    padding: 20px 12px;
+    box-sizing: border-box;
+    transition: 0.5s;
+}
+h3{
+    text-align: center;
+    font-weight: 600;
+    margin: 10px 0;
+
+}
+
+.course-col:hover{
+    box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
+}
+@media(max-width: 700px){
+    .row{
+        flex-direction: column;
+    }
+}
+/*campus section*/
+.campus{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 50px;
+}
+.campus-col{
+    flex-basis: 32%;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow:hidden;
+}
+.campus-col img{
+    width: 100%;
+    display: block;
+}
+.layer{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.layer:hover{
+    background: rgba(0,0,50,0.7);
+}
+.layer h3{
+    width: 100%;
+    font-weight: 500;
+    color: #fff;
+    font-size: 26px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    transition: 0.5s;
+}
+.layer:hover h3{
+    opacity: 1;
+    bottom: 50%;
+}
+/*Facilities*/
+.facilities{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+.facilities-col{
+    flex-basis: 31%;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    text-align: left;
+}
+
+.facilities-col img{
+    width: 100%;
+    border-radius: 10px;
+}
+.facilities-col p{
+    padding: 0;
+}
+.facilities-col h3{
+    margin-top: 16px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+/*testimonials*/
+.testimonial{
+    width: 80%;
+    margin: auto;
+    padding-top: 100px;
+    text-align: center;
+}
+
+.testimonial-col{
+    flex-basis: 44%;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    text-align: left;
+    background: #fff3d3;
+    padding: 25px;
+    cursor: pointer;
+    display: flex;
+}
+
+.testimonial-col img{
+    height: 40px;
+    margin-left: 5px;
+    margin-right: 30px;
+    border-radius: 50%; /*To make the picture circle*/
+}
+
+.testimonial-col p{
+    padding: 0;
+}
+
+.testimonial-col h3{
+    margin-top: 15px;
+    text-align: left;
+}
+
+.testimonial-col .fa{
+    color:#ddf347;
+}
+
+@media(max-width: 700px){
+    .testimonial-col img{
+        margin-left: 0px;
+        margin-right: 15px;
+    }
+}
+/*Contactus section*/
+.contactUs{
+    margin: 100px auto;
+    width: 80%;
+    background-image: url('Images/studentGather.jpg');
+    opacity: 1.9;
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.contactUs h1{
+    color: #fff;
+    margin-bottom: 40px;
+    padding: 0;
+}
+
+
+.contactBtn {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 12px 34px;
+    font-size: 13px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+}
+
+    .contactBtn:hover {
+        border: 1px solid #0d2146;
+        background: #000;
+        transition: 1s;
+    }
+
+    @media(max-width: 700px){
+        .contactUs h1{
+            font-size: 24px;
+        }
+    }
+
+    /*End of the homepage css*/
+
+    /*Start of contact Us page*/
+
+    .container{
+        position: relative;
+        width: 100%;
+        min-height: 100vh;
+        padding: 2em;
+        background-color: #fafafa;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .form{
+        width: 100%;
+        max-width: 820px;
+        height: 500px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 20px 1px rgba(0,0,0, 0.1);
+        z-index: 1000;
+        overflow: hidden:no-display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+    .contact-info{
+        background-color: green;
+    }
+
+    .contact-form{
+        border-radius: 50%;
+        background: red;
+        position: absolute;
+    }
+    .circle{
+        border-radius: 50%;
+        background: linear-gradient(135deg, transparent 20%, #149279);
+        position: absolute;
+    }
+    .circle.one{
+        width: 130px;
+        height: 130px;
+        top: 130px;
+        right: -40px;
+    }
+    .cirle.two{
+        width: 80px;
+        heigth: 80px;
+        top: 10px;
+        right: 30px;
+    }
+    /*end of the contact us page*/
