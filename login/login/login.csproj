@@ -106,6 +106,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="Admin\AdminHome.aspx" />
+    <Content Include="Admin\AdminLogin.aspx" />
+    <Content Include="Admin\AdminRegister.aspx" />
+    <Content Include="Admin\AdminStyle.css" />
+    <Content Include="Admin\HomepageEdit.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="contactUs.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -151,12 +156,14 @@
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="Admin\Admin.Master" />
     <None Include="Images\UON" />
     <Content Include="Images\UON2.jpg" />
     <Content Include="Images\UON3.jpg" />
     <Content Include="Images\webdev.jfif" />
     <Content Include="Images\woman.png" />
     <Content Include="signin.aspx" />
+    <Content Include="StudentFeedback.aspx" />
     <Content Include="style.css" />
     <Content Include="UserRegister.aspx" />
     <Content Include="userStylesheet.css" />
@@ -200,6 +207,41 @@
     <Content Include="user.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\Admin.Master.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Admin.Master.designer.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminHome.aspx.cs">
+      <DependentUpon>AdminHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminHome.aspx.designer.cs">
+      <DependentUpon>AdminHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminLogin.aspx.cs">
+      <DependentUpon>AdminLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminLogin.aspx.designer.cs">
+      <DependentUpon>AdminLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminRegister.aspx.cs">
+      <DependentUpon>AdminRegister.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminRegister.aspx.designer.cs">
+      <DependentUpon>AdminRegister.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\HomepageEdit.aspx.cs">
+      <DependentUpon>HomepageEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\HomepageEdit.aspx.designer.cs">
+      <DependentUpon>HomepageEdit.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
@@ -261,6 +303,13 @@
     </Compile>
     <Compile Include="Site.Mobile.Master.designer.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="StudentFeedback.aspx.cs">
+      <DependentUpon>StudentFeedback.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StudentFeedback.aspx.designer.cs">
+      <DependentUpon>StudentFeedback.aspx</DependentUpon>
     </Compile>
     <Compile Include="user.Master.cs">
       <DependentUpon>user.Master</DependentUpon>

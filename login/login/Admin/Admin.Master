@@ -1,0 +1,127 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="login.Admin.Admin" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+       <title>School Admin</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="AdminStyle.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia" />
+   <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/font-awesome-line-awesome/css/all.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+  <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+</svg>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+     <style>
+        :root{
+            --main-color--: #DD2F6E;
+            --color-dark: #1D2231;
+            --text-grey: #8390A2;
+        }
+
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            list-style-type: none;
+            text-decoration: none;
+            font-family: 'poppins', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+         <div class="sidebar">
+        <div class="sidebar-brand">
+            <h1 style="color:#fff"><span class="fa-lastfm la-accusoft"></span>Admin</h1>
+        </div>
+        
+        <div class="sidebar-menu">
+            <ul>
+                <li>
+                    <a href="" class="active"><span class="fa-lastfm la-igloo"></span>
+                        <span class="navText">Dashboard</span></a></li>
+                <li>
+                    <a href=""><span class="fa-lastfm la-users"></span>
+                        <span class="navText">Admin</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href=""><span class="fa-lastfm la-clipboard-list"></span>
+                        <span class="navText">Homepage</span>
+                    </a>
+                </li>
+                <li>
+                    <a href=""><span class="fa-lastfm la-circle"></span>
+                        <span class="navText">Club</span>
+                    </a>
+                </li>
+
+                   <li>
+                    <a href=""><span class="fa-lastfm la-circle"></span>
+                        <span class="navText">Club</span>
+                    </a>
+                </li>
+
+                 <li>
+                    <a href=""><span class="fa-lastfm la-circle"></span>
+                        <span class="navText">Course</span>
+                    </a>
+                </li>
+
+                   <li>
+                    <a href=""><span class="fa-lastfm dropdown"></span>
+                        <span class="navText">Sports</span>
+                        
+                    </a>
+                       <ul class="dropdown-menu">
+                            <li><a class="dropdown-item navText" href="#">Sports</a></li>
+                                <li><a class="dropdown-item navText" href="#">E-Sports</a></li>
+                        </ul>
+                </li>
+
+                  
+
+                   <li>
+                    <a href=""><span class="fa-lastfm la-circle"></span>
+                        <span class="navText">career</span>
+                       
+                    </a>
+                </li>
+
+                 <li>
+                    <a href=""><span class="fa-lastfm dropdown"></span>
+                        <span class="navText">Explore</span>
+                       
+                    </a>
+
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item navText" href="#">Organisation</a></li>
+                        <li><a class="dropdown-item navText" href="#">Local Food Tour</a></li>
+                        <li><a class="dropdown-item navText" href="#">About Us</a></li>
+                        <li><a class="dropdown-item navText" href="#">Campus Event</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+            
+     
+   
+
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
