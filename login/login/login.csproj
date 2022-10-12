@@ -110,7 +110,14 @@
     <Content Include="Admin\AdminLogin.aspx" />
     <Content Include="Admin\AdminRegister.aspx" />
     <Content Include="Admin\AdminStyle.css" />
-    <Content Include="Admin\HomepageEdit.aspx" />
+    <Content Include="Admin\HomepageEditCampus.aspx" />
+    <Content Include="Admin\HomepageEditCourse.aspx" />
+    <Content Include="Admin\HomepageEditFacility.aspx" />
+    <Content Include="Admin\HomepageEditFeedback.aspx" />
+    <Content Include="App_Data\University.mdf" />
+    <Content Include="App_Data\University_log.ldf">
+      <DependentUpon>University.mdf</DependentUpon>
+    </Content>
     <Content Include="Contact.aspx" />
     <Content Include="contactUs.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -235,12 +242,33 @@
     <Compile Include="Admin\AdminRegister.aspx.designer.cs">
       <DependentUpon>AdminRegister.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\HomepageEdit.aspx.cs">
-      <DependentUpon>HomepageEdit.aspx</DependentUpon>
+    <Compile Include="Admin\HomepageEditCampus.aspx.cs">
+      <DependentUpon>HomepageEditCampus.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\HomepageEdit.aspx.designer.cs">
-      <DependentUpon>HomepageEdit.aspx</DependentUpon>
+    <Compile Include="Admin\HomepageEditCampus.aspx.designer.cs">
+      <DependentUpon>HomepageEditCampus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\HomepageEditCourse.aspx.cs">
+      <DependentUpon>HomepageEditCourse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\HomepageEditCourse.aspx.designer.cs">
+      <DependentUpon>HomepageEditCourse.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\HomepageEditFacility.aspx.cs">
+      <DependentUpon>HomepageEditFacility.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\HomepageEditFacility.aspx.designer.cs">
+      <DependentUpon>HomepageEditFacility.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\HomepageEditFeedback.aspx.cs">
+      <DependentUpon>HomepageEditFeedback.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\HomepageEditFeedback.aspx.designer.cs">
+      <DependentUpon>HomepageEditFeedback.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
@@ -347,9 +375,7 @@
       <DependentUpon>WebForm2.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
