@@ -114,6 +114,7 @@
     <Content Include="Admin\HomepageEditCourse.aspx" />
     <Content Include="Admin\HomepageEditFacility.aspx" />
     <Content Include="Admin\HomepageEditFeedback.aspx" />
+    <Content Include="Admin\Sports\AddSports.aspx" />
     <Content Include="App_Data\University.mdf" />
     <Content Include="App_Data\University_log.ldf">
       <DependentUpon>University.mdf</DependentUpon>
@@ -270,6 +271,13 @@
     <Compile Include="Admin\HomepageEditFeedback.aspx.designer.cs">
       <DependentUpon>HomepageEditFeedback.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\Sports\AddSports.aspx.cs">
+      <DependentUpon>AddSports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Sports\AddSports.aspx.designer.cs">
+      <DependentUpon>AddSports.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
@@ -293,6 +301,7 @@
     <Compile Include="contactUs.aspx.designer.cs">
       <DependentUpon>contactUs.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DAL\DataAccessLayer.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -375,7 +384,9 @@
       <DependentUpon>WebForm2.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="BBL\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />

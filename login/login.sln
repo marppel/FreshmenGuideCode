@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.32228.343
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "login", "login\login.csproj", "{1BDB3E75-6CDC-4D84-86C6-9B0746F555EC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{A7A0F759-20FB-4423-8BFC-59C733AAF8EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessObjectLayer", "BusinessObjectLayer\BusinessObjectLayer.csproj", "{9746ED63-23AB-412F-8417-2AC42031C0EA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{1BDB3E75-6CDC-4D84-86C6-9B0746F555EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1BDB3E75-6CDC-4D84-86C6-9B0746F555EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1BDB3E75-6CDC-4D84-86C6-9B0746F555EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7A0F759-20FB-4423-8BFC-59C733AAF8EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7A0F759-20FB-4423-8BFC-59C733AAF8EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7A0F759-20FB-4423-8BFC-59C733AAF8EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7A0F759-20FB-4423-8BFC-59C733AAF8EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9746ED63-23AB-412F-8417-2AC42031C0EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9746ED63-23AB-412F-8417-2AC42031C0EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9746ED63-23AB-412F-8417-2AC42031C0EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9746ED63-23AB-412F-8417-2AC42031C0EA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

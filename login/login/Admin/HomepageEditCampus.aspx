@@ -12,7 +12,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <style>
-        .crud:not(:last-child){
+        #crud:not(:last-child){
             margin-right: 10px;
         }
     </style>

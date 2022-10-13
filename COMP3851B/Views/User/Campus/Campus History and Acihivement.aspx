@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Campus History and Acihivement.aspx.cs" Inherits="COMP3851B.WebForm1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-<style>
+    <style>
     /* Three image containers (use 25% for four, and 50% for two, etc) */
 .column {
   float: left;
@@ -18,7 +18,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div style="display : flex ; align-items : center " >
-        <div style ="flex-basis :40%">
+        <div style ="flex-basis :40%; margin-left: 80px;">
         <!-- UON Building Image --> 
             <img src="../../../Images/insert%20image.png" style="margin-top : 50px; margin-left: 20px; max-width : 100%"/>
         </div>
@@ -39,15 +39,19 @@
   </div>
   <div class="column">
     <img src="../../../Images/insert%20image.png"  alt="Image2" style="width:100%">
+        </div>
+        </div>
       <figcaption style="text-align :center">Achivement 1 </figcaption>
   </div>
 
   <div class="column">
     <img src="../../../Images/insert%20image.png" alt="Image 3" style="width:100%">
+        </div>
       <figcaption style="text-align :center">Achivement 2</figcaption>
   </div>
       <div class="column">
     <img src="../../../Images/insert%20image.png" alt="Image 4" style="width:100%">
+          </div>
           <figcaption style="text-align :center">Achivement 3 </figcaption>
   </div>
     <div class="column">
@@ -62,15 +66,19 @@
   </div>
   <div class="column">
     <img src="../../../Images/insert%20image.png" alt="Image2" style="width:100%">
+        </div>
+        </div>
       <figcaption style="text-align :center">Achivement 4 </figcaption>
   </div>
 
   <div class="column">
     <img src="../../../Images/insert%20image.png" alt="Image 3" style="width:100%">
+        </div>
       <figcaption style="text-align :center">Achivement 5</figcaption>
   </div>
       <div class="column">
     <img src="../../../Images/insert%20image.png" alt="Image 4" style="width:100%">
+          </div>
           <figcaption style="text-align :center">Achivement 6 </figcaption>
   </div>
     <div class="column">
@@ -86,15 +94,19 @@
   </div>
   <div class="column">
     <img src="../../../Images/insert%20image.png" alt="Image2" style="width:100%">
+        </div>
+        </div>
       <figcaption style="text-align :center">Achivement 7 </figcaption>
   </div>
 
   <div class="column">
     <img src="../../../Images/insert%20image.png" alt="Image 3" style="width:100%">
+        </div>
       <figcaption style="text-align :center">Achivement 8</figcaption>
   </div>
       <div class="column">
     <img src="../../../Images/insert%20image.png" alt="Image 4" style="width:100%">
+          </div>
           <figcaption style="text-align :center">Achivement 9 </figcaption>
   </div>
     <div class="column">

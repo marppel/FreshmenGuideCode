@@ -2,6 +2,7 @@
 /*navbar masterpage*/
 nav{
     /*overflow: auto;*/
+    z-index:1;
 }
 .navbar{
     padding: 0;
@@ -169,6 +170,7 @@ h3{
     width: 80%;
     margin: auto;
     text-align: center;
+    z-index: -1;
     padding-top: 50px;
 }
 .campus-col{
@@ -176,11 +178,12 @@ h3{
     border-radius: 10px;
     margin-bottom: 30px;
     position: relative;
-    overflow:hidden;
+    /*overflow:hidden;*/
 }
 .campus-col img{
     width: 100%;
     display: block;
+    z-index: -1;
 }
 .layer{
     height: 100%;
@@ -188,9 +191,11 @@ h3{
     position: absolute;
     top: 0;
     left: 0;
+   /* z-index: -1;*/
 }
 .layer:hover{
     background: rgba(0,0,50,0.7);
+    /*z-index: -1;*/
 }
 .layer h3{
     width: 100%;
