@@ -47,7 +47,7 @@
     <!--Form content -->
     <div class="container"  style="margin-left: 280px">
         <div class="form-horizontal">
-            <h2>Add New Tutorial Guide Category</h2>
+            <h2>Tutorial Guide Category</h2>
             <hr />
 
             <div class="form-group">
@@ -57,6 +57,8 @@
                 </div>
             </div>
 
+            <br />
+
             <!--CRUD buttons -->
             <div id="crud">
                 <asp:Button ID="btnAdd" runat="server" Text="Add" CssClass="btn btn-success" OnClick="btnAdd_Click" />
@@ -64,8 +66,10 @@
                 <asp:Button ID="btnDelete" runat="server" Text="Delete" CssClass="btn btn-danger" />
             </div>
             <br /><br />
-            <div class="gridview">
-                <asp:GridView ID="GridView1" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None">
+
+            <!-- GridView -->
+            <div class=" container">
+                <asp:GridView ID="GVCat" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" AutoGenerateColumns="false">
                     <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                     <EditRowStyle BackColor="#999999" />
                     <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
@@ -77,6 +81,11 @@
                     <SortedAscendingHeaderStyle BackColor="#506C8C" />
                     <SortedDescendingCellStyle BackColor="#FFFDF8" />
                     <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
+
+                    <Columns>
+                        <asp:BoundField HeaderText="Category Id" DataField ="gdeCatId" />
+                        <asp:BoundField HeaderText="Category Name" DataField ="gdeCatName" />
+                    </Columns>
                 </asp:GridView>
             </div>
                   
