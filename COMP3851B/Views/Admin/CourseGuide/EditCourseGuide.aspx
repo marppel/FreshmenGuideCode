@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="EditCourseGuide.aspx.cs" Inherits="COMP3851B.Views.Admin.CourseGuide.AddCourseGuide" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="EditCourseGuide.aspx.cs" Inherits="COMP3851B.Views.Admin.CourseGuide.AddCourseGuide" ValidateRequest="false" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
@@ -54,7 +54,7 @@
     <!--Form content -->
     <div class="container"  style="margin-left: 280px">
         <div class="form-horizontal">
-            <h2>Add New Tutorial Guide</h2>
+            <h2>Tutorial Guide</h2>
             <hr />
 
             <div class="form-group">
@@ -73,16 +73,16 @@
             </div>
 
             <div class="form-group">
-                <asp:Label ID="lblGuide" runat="server"  CssClass="col-md-5 control-label" Text="Write the step(s) or description in the space below. "></asp:Label>
-                <div class="col-md-12"> 
-                    <textarea id="summernote" name="editordata"></textarea>
-                </div>
-            </div>
+                <asp:Label ID="lblDesc" runat="server"  CssClass="col-md-2 control-label" Text="Enter the description of the tutorial guide"></asp:Label>
+                <div class="col-md-12">
+                     <asp:TextBox ID="txtSummernote" runat="server" TextMode="MultiLine" Rows="2"></asp:TextBox>
+                     <asp:Label ID="lblSum" runat="server" Text="Summernote"></asp:Label>
+                  </div>
+             </div>
 
             <!--CRUD buttons -->
             <div id="crud">
-                <asp:Button ID="btnCreate" runat="server" Text="Create" CssClass="btn btn-success" />
-                <asp:Button ID="btnRun" runat="server" Text="Run" CssClass="btn btn-info" />
+                <asp:Button ID="btnAdd" runat="server" Text="Add" CssClass="btn btn-success" OnClick="btnAdd_Click" />
                 <asp:Button ID="btnUpdate" runat="server" Text="Update" CssClass="btn btn-warning" />
                 <asp:Button ID="btnDelete" runat="server" Text="Delete" CssClass="btn btn-danger" />
             </div>
@@ -107,12 +107,28 @@
     </div> 
 
     <!--summernote script -->
+    <!--***************************************************************************************
+    *    Title: "Here is My code Working Perfectly"
+    *    Author/Username: PK-1825
+    *    Date: 27 Dec, 2016
+    *    Availability: https://stackoverflow.com/questions/36462787/is-it-possible-to-get-value-from-summernote-editor-in-asp-net-web-forms
+    *
+    ***************************************************************************************/-->
     <script>
-        $('#summernote').summernote({
-            placeholder: 'Hello Bootstrap 4',
-            tabsize: 2,
-            height: 300
+        $(function () {
+            // Set up your summernote instance
+            $("#<%= txtSummernote.ClientID %>").summernote();
+            focus: true
+            // When the summernote instance loses focus, update the content of your <textarea>
+            $("#<%= txtSummernote.ClientID %>").on('summernote.blur', function () {
+                $('#<%= txtSummernote.ClientID %>').html($('#<%= txtSummernote.ClientID %>').summernote('code'));
+           });
         });
     </script>
-
+    <script type="text/javascript">
+        function funcMyHtml() {
+            debugger;
+            document.getElementById("#<%= txtSummernote.ClientID %>").value = $('#<%= txtSummernote.ClientID %>').summernote('code');
+        }
+    </script>
 </asp:Content>

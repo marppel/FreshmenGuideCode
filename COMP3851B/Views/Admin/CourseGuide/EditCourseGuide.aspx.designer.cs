@@ -60,31 +60,40 @@ namespace COMP3851B.Views.Admin.CourseGuide
         protected global::System.Web.UI.WebControls.DropDownList ddlCat;
 
         /// <summary>
-        /// lblGuide control.
+        /// lblDesc control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblGuide;
+        protected global::System.Web.UI.WebControls.Label lblDesc;
 
         /// <summary>
-        /// btnCreate control.
+        /// txtSummernote control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCreate;
+        protected global::System.Web.UI.WebControls.TextBox txtSummernote;
 
         /// <summary>
-        /// btnRun control.
+        /// lblSum control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnRun;
+        protected global::System.Web.UI.WebControls.Label lblSum;
+
+        /// <summary>
+        /// btnAdd control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAdd;
 
         /// <summary>
         /// btnUpdate control.

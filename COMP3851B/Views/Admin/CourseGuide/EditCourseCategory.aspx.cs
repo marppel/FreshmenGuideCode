@@ -38,13 +38,18 @@ namespace COMP3851B.Views.Admin.CourseGuide
                 Guide gde = new Guide(name);
 
                 int result = gde.AddCategory();
+                
                 if (result == 1)
                 {
                     ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('SUCCESS')", true);
+                    gdeList = gde.GetAllCategories();
+
+                    GVCat.DataSource = gdeList;
+                    GVCat.DataBind();
                 }
                 else
                 {
-                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('UNSUCCESS!')", true);
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('RECORD Exists!')", true);
                 }
             }
         }

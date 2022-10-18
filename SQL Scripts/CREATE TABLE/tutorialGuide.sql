@@ -1,7 +1,7 @@
 USE [COMP3851B]
 GO
 
-/****** Object:  Table [dbo].[tutorialGuide]    Script Date: 18/10/2022 12:55:46 pm ******/
+/****** Object:  Table [dbo].[tutorialGuide]    Script Date: 18/10/2022 8:47:25 pm ******/
 SET ANSI_NULLS ON
 GO
 
@@ -10,9 +10,9 @@ GO
 
 CREATE TABLE [dbo].[tutorialGuide](
 	[gdeID] [int] IDENTITY(1,1) NOT NULL,
-	[gdeCatId] [int] NOT NULL,
-	[GdeTitle] [nvarchar](255) NULL,
-	[GdeDesc] [varbinary](max) NULL,
+	[gdeCatID] [int] NOT NULL,
+	[gdeTitle] [nvarchar](255) NULL,
+	[gdeDesc] [nvarchar](max) NULL,
  CONSTRAINT [PK__courseGu__8DAA4F7AFBD74078] PRIMARY KEY CLUSTERED 
 (
 	[gdeID] ASC
@@ -20,7 +20,7 @@ CREATE TABLE [dbo].[tutorialGuide](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
 
-ALTER TABLE [dbo].[tutorialGuide]  WITH CHECK ADD  CONSTRAINT [FK__courseGui__cseCa__47DBAE45] FOREIGN KEY([gdeCatId])
+ALTER TABLE [dbo].[tutorialGuide]  WITH CHECK ADD  CONSTRAINT [FK__courseGui__cseCa__47DBAE45] FOREIGN KEY([gdeCatID])
 REFERENCES [dbo].[tutorialGuideCategory] ([gdeCatID])
 GO
 

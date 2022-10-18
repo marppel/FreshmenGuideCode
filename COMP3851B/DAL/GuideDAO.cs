@@ -11,17 +11,17 @@ namespace COMP3851B.DAL
 {
     public class GuideDAO
     {
-        public int Insert(Guide gde)
+        public int InsertCategory(Guide gde)
         {
             string DBConnect = ConfigurationManager.ConnectionStrings["FunUniversityConnectionString"].ConnectionString;
             SqlConnection myConn = new SqlConnection(DBConnect);
 
-            string sqlStmt = "INSERT INTO tutorialGuideCategory (gdeCatName) VALUES (@paraGName)";
+            string sqlStmt = "IF NOT EXISTS(SELECT gdeCatID FROM tutorialGuideCategory WHERE gdeCatName=@paragname) BEGIN INSERT INTO tutorialGuideCategory(gdeCatName) VALUES(@paragname) END ELSE BEGIN RETURN END";
 
             int result = 0;    // Execute NonQuery return an integer value
             SqlCommand sqlCmd = new SqlCommand(sqlStmt, myConn);
 
-            sqlCmd.Parameters.AddWithValue("@paraGName", gde.gdeCatName);
+            sqlCmd.Parameters.AddWithValue("@paragname", gde.gdeCatName);
 
             myConn.Open();
             result = sqlCmd.ExecuteNonQuery();
@@ -62,6 +62,27 @@ namespace COMP3851B.DAL
                 }
             }
             return gList;
+        }
+        public int InsertGuide(Guide gde)
+        {
+            string DBConnect = ConfigurationManager.ConnectionStrings["FunUniversityConnectionString"].ConnectionString;
+            SqlConnection myConn = new SqlConnection(DBConnect);
+
+            string sqlStmt = "INSERT INTO tutorialGuide(gdeTitle, gdeDesc, gdeCatID) VALUES (@paragdetitle, @gdedesc, @paracatid)";
+
+            int result = 0;    // Execute NonQuery return an integer value
+            SqlCommand sqlCmd = new SqlCommand(sqlStmt, myConn);
+
+            sqlCmd.Parameters.AddWithValue("@paracatid", gde.gdeCatID);
+            sqlCmd.Parameters.AddWithValue("@paragdetitle", gde.gdeTitle);
+            sqlCmd.Parameters.AddWithValue("@gdedesc", gde.gdeDesc);
+
+            myConn.Open();
+            result = sqlCmd.ExecuteNonQuery();
+
+            myConn.Close();
+
+            return result;
         }
     }
 }

@@ -68,7 +68,7 @@
             <br /><br />
 
             <!-- GridView -->
-            <div class=" container">
+            <div class="gridview">
                 <asp:GridView ID="GVCat" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" AutoGenerateColumns="false">
                     <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                     <EditRowStyle BackColor="#999999" />

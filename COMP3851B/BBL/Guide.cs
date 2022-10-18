@@ -13,6 +13,10 @@ namespace COMP3851B.BBL
         public string gdeCatName { get; set; }
 
         //Guide
+        public int gdeID { get; set; }
+        public string gdeTitle { get; set; }
+        public string gdeDesc { get; set; }
+
 
         //Class
         public Guide()
@@ -29,18 +33,35 @@ namespace COMP3851B.BBL
             this.gdeCatID = gdecatid;
             this.gdeCatName = gdecatname;
         }
+        public Guide(int gdeid, string gdetitle, string gdedesc)
+        {
+            this.gdeCatID = gdeid;
+            this.gdeTitle = gdetitle;
+            this.gdeDesc = gdedesc;
+        }
+        public Guide(string gdetitle, string gdedesc)
+        {
+            this.gdeTitle = gdetitle;
+            this.gdeDesc = gdedesc;
+        }
+
 
         //Methods
         public int AddCategory()
         {
             GuideDAO dao = new GuideDAO();
-            return (dao.Insert(this));
+            return (dao.InsertCategory(this));
         }
-
         public List<Guide> GetAllCategories()
         {
             GuideDAO dao = new GuideDAO();
             return dao.GetAllGuideCategories();
+        }
+
+        public int AddGuide()
+        {
+            GuideDAO dao = new GuideDAO();
+            return (dao.InsertGuide(this));
         }
     }
 }
