@@ -90,6 +90,30 @@
               <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="Category is required" ControlToValidate="ddlCat" ForeColor="Red"></asp:RequiredFieldValidator>
           </div>
 
+              <!--Club Mission-->
+          <div class="form-group">
+            <label class="col-lg-3 col-md-3 col-sm-3 col-xs-3 control-label">Mission:</label>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                <asp:TextBox ID="txtCMission" runat="server" class="form-control" placeholder="Enter club's mission"></asp:TextBox>
+            </div>
+          </div>
+
+            <!--Club Vision-->
+          <div class="form-group">
+            <label class="col-lg-3 col-md-3 col-sm-3 col-xs-3 control-label">Vision:</label>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                <asp:TextBox ID="txtCVision" runat="server" class="form-control" placeholder="Enter club's vision"></asp:TextBox>
+            </div>
+          </div>
+
+            <!--Club Purpose-->
+          <div class="form-group">
+            <label class="col-lg-3 col-md-3 col-sm-3 col-xs-3 control-label">Purpose:</label>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                <asp:TextBox ID="txtCPurpose" runat="server" class="form-control" placeholder="Enter club's purpose"></asp:TextBox>
+            </div>
+          </div>
+
             <!--Club Banner Image-->
         <div class="form-group">
             <label class="col-md-4 control-label" for="filebutton">Image banner (Details page):</label>

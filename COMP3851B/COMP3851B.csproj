@@ -67,27 +67,70 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="CSS\AdminStyle.css" />
     <Content Include="CSS\Universal.css" />
+    <Content Include="CSS\style.css" />
+    <Content Include="CSS\UserStylesheet.css" />
+    <Content Include="Images\compLab.jpg" />
+    <Content Include="Images\graphic.jpg" />
     <Content Include="Images\insert image.png" />
+    <Content Include="Images\library.jpg" />
+    <Content Include="Images\man.png" />
+    <Content Include="Images\marketing.jpg" />
+    <Content Include="Images\playground.jpg" />
+    <Content Include="Images\school.jpg" />
+    <Content Include="Images\school2.jpeg" />
+    <Content Include="Images\schoolManagement.jpg" />
+    <Content Include="Images\studentGather.jpg" />
+    <Content Include="Images\study.jpg" />
+    <Content Include="Images\teacher1.jfif" />
+    <Content Include="Images\teacher2.jpg" />
+    <Content Include="Images\teacher3.jfif" />
+    <Content Include="Images\UONBuilding.jpg" />
     <Content Include="Images\UON.png" />
+    <Content Include="Images\UON2.jpg" />
+    <Content Include="Images\UON3.jpg" />
+    <Content Include="Images\UONEditedLogo.png" />
+    <Content Include="Images\webdev.jfif" />
+    <Content Include="Images\woman.png" />
+    <Content Include="Views\Admin\AdminEditHomepage\EditHomepageCampus.aspx" />
+    <Content Include="Views\Admin\AdminEditHomepage\EditHomepageCourse.aspx" />
+    <Content Include="Views\Admin\AdminEditHomepage\EditHomepageFacility.aspx" />
+    <Content Include="Views\Admin\AdminEditHomepage\EditHomepageFeedback.aspx" />
+    <Content Include="Views\Admin\AdminHome\AdminHome.aspx" />
+    <Content Include="Views\Admin\AdminLoginAndRegister\AdminRegister.aspx" />
+    <Content Include="Views\Admin\AdminLoginAndRegister\Login.aspx" />
     <Content Include="Views\Admin\Club\AddClub.aspx" />
     <Content Include="Views\Admin\Club\AddClubEvent.aspx" />
     <Content Include="Views\Admin\Club\DisplayAllClub.aspx" />
     <Content Include="Views\Admin\Club\EditClub.aspx" />
-    <Content Include="Views\Admin\CourseGuide\AddCourseCategory.aspx" />
-    <Content Include="Views\Admin\CourseGuide\AddCourseGuide.aspx" />
     <Content Include="Views\Admin\CourseGuide\EditCourseCategory.aspx" />
     <Content Include="Views\Admin\CourseGuide\EditCourseGuide.aspx" />
+    <Content Include="Views\Admin\Sports\EditESports.aspx" />
+    <Content Include="Views\Admin\Sports\EditSports.aspx" />
     <Content Include="Views\User\Career\CareerSeminar.aspx" />
     <Content Include="Views\User\Club\ClubCategory.aspx" />
     <Content Include="Views\User\Club\ClubDetail.aspx" />
     <Content Include="Views\User\CourseGuide\CourseGuideDetails.aspx" />
     <Content Include="Views\User\CourseGuide\CourseGuideSearch.aspx" />
+    <Content Include="Views\User\StudentFeedback\StudentFeedback.aspx" />
+    <Content Include="Views\User\UserHomepage\UserHome.aspx" />
     <Content Include="Web.config" />
     <Content Include="Views\User\Campus\Campus History and Acihivement.aspx" />
     <Content Include="Views\User\Campus\Campus Event.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BBL\Account.cs" />
+    <Compile Include="BBL\Guide.cs" />
+    <Compile Include="DAL\AccountDAO.cs" />
+    <Compile Include="DAL\GuideDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="MasterPage.Master.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
@@ -95,6 +138,76 @@
     </Compile>
     <Compile Include="MasterPage.Master.designer.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\Admin.Master.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Admin\Admin.Master.designer.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\AdminEditHomepage\EditHomepageCampus.aspx.cs">
+      <DependentUpon>EditHomepageCampus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Admin\AdminEditHomepage\EditHomepageCampus.aspx.designer.cs">
+      <DependentUpon>EditHomepageCampus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\AdminEditHomepage\EditHomepageCourse.aspx.cs">
+      <DependentUpon>EditHomepageCourse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Admin\AdminEditHomepage\EditHomepageCourse.aspx.designer.cs">
+      <DependentUpon>EditHomepageCourse.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\AdminEditHomepage\EditHomepageFacility.aspx.cs">
+      <DependentUpon>EditHomepageFacility.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Admin\AdminEditHomepage\EditHomepageFacility.aspx.designer.cs">
+      <DependentUpon>EditHomepageFacility.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\AdminEditHomepage\EditHomepageFeedback.aspx.cs">
+      <DependentUpon>EditHomepageFeedback.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Admin\AdminEditHomepage\EditHomepageFeedback.aspx.designer.cs">
+      <DependentUpon>EditHomepageFeedback.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\AdminHome\AdminHome.aspx.cs">
+      <DependentUpon>AdminHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Admin\AdminHome\AdminHome.aspx.designer.cs">
+      <DependentUpon>AdminHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\AdminLoginAndRegister\AdminRegister.aspx.cs">
+      <DependentUpon>AdminRegister.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Admin\AdminLoginAndRegister\AdminRegister.aspx.designer.cs">
+      <DependentUpon>AdminRegister.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\AdminLoginAndRegister\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Admin\AdminLoginAndRegister\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\Sports\EditESports.aspx.cs">
+      <DependentUpon>EditESports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Admin\Sports\EditESports.aspx.designer.cs">
+      <DependentUpon>EditESports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\Sports\EditSports.aspx.cs">
+      <DependentUpon>EditSports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Admin\Sports\EditSports.aspx.designer.cs">
+      <DependentUpon>EditSports.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\User\Campus\Campus History and Acihivement.aspx.cs">
       <DependentUpon>Campus History and Acihivement.aspx</DependentUpon>
@@ -130,20 +243,6 @@
     </Compile>
     <Compile Include="Views\Admin\Club\EditClub.aspx.designer.cs">
       <DependentUpon>EditClub.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Admin\CourseGuide\AddCourseCategory.aspx.cs">
-      <DependentUpon>AddCourseCategory.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Admin\CourseGuide\AddCourseCategory.aspx.designer.cs">
-      <DependentUpon>AddCourseCategory.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Admin\CourseGuide\AddCourseGuide.aspx.cs">
-      <DependentUpon>AddCourseGuide.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Admin\CourseGuide\AddCourseGuide.aspx.designer.cs">
-      <DependentUpon>AddCourseGuide.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Admin\CourseGuide\EditCourseCategory.aspx.cs">
       <DependentUpon>EditCourseCategory.aspx</DependentUpon>
@@ -201,10 +300,37 @@
     <Compile Include="Views\User\Campus\Campus Event.aspx.designer.cs">
       <DependentUpon>Campus Event.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\User\StudentFeedback\StudentFeedback.aspx.cs">
+      <DependentUpon>StudentFeedback.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\User\StudentFeedback\StudentFeedback.aspx.designer.cs">
+      <DependentUpon>StudentFeedback.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\User\User.Master.cs">
+      <DependentUpon>User.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\User\User.Master.designer.cs">
+      <DependentUpon>User.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Views\User\UserHomepage\UserHome.aspx.cs">
+      <DependentUpon>UserHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\User\UserHomepage\UserHome.aspx.designer.cs">
+      <DependentUpon>UserHome.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
     <None Include="packages.config" />
     <Content Include="MasterPage.Master" />
+    <Content Include="Views\Admin\Admin.Master" />
+    <Content Include="Views\User\User.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -213,8 +339,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="BBL\" />
-    <Folder Include="DAL\" />
     <Folder Include="JS\" />
   </ItemGroup>
   <PropertyGroup>

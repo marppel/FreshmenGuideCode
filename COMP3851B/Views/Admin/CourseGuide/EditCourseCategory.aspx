@@ -1,43 +1,86 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="EditCourseCategory.aspx.cs" Inherits="COMP3851B.Views.Admin.CourseGuide.EditCourseCategory" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="EditCourseCategory.aspx.cs" Inherits="COMP3851B.Views.Admin.CourseGuide.AddCourseCategory" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<div class="container">
-    <h1 class="text-primary">Add Edit Club Category</h1>
-      <hr>
-	<div class="row">
-      
-      <!--Alert-->
-      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 personal-info">
+<asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
+    <style>
+        #crud:not(:last-child){
+            margin-right: 10px;
+        }
+        hr {
+          border: 0;
+          clear:both;
+          display:block;
+          width: 100%;               
+          background-color:black;
+          height: 1px;
+        }
+    </style>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <!--Search bar -->
+    <div class="main-content">
+        <header>
+            <h1>
+                <asp:Label ID="Label2" runat="server" Text="Label">
+                    <span class="fa-lastfm la-bars"></span>
+                </asp:Label>
+                Dashboard
+            </h1>
 
-        <!--Content info-->
-        <div>
-
-            <!--CourseCategory Name-->
-          <div class="form-group">
-            <label class="col-lg-3 col-md-3 col-sm-3 col-xs-3 control-label">Name:</label>
-            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-              <asp:TextBox ID="txtCatName" runat="server" class="form-control" placeholder="Enter category name"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Category name is required" ControlToValidate="txtCatName" ForeColor="Red"></asp:RequiredFieldValidator>
+            <div class="search-wrapper">
+                <span class="las la-search"></span>
+                <input type="search" placeholder="search here" />
             </div>
-          </div>
-
-            <!--CourseCategory Description-->
-        <div class="form-group">
-            <label class="col-lg-3 col-md-3 col-sm-3 col-xs-3 control-label">Description:</label>
-            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-              <asp:TextBox ID="txtCatDesc" runat="server" class="form-control" placeholder="Enter a description"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Description is required" ControlToValidate="txtCatDesc" ForeColor="Red"></asp:RequiredFieldValidator>
+            <div class="user-wrapper">
+                <img src="../../../Images/UONEditedLogo.png" width="30px" height="30px" alt="" />
+                <div>
+                    <h4>School Admin</h4>
+                    <small>Admin</small>
+                </div>
             </div>
-          </div>
 
-            <!--Update/Cancel Buttons-->
-         <div class="form-group col-lg-12">
-             <asp:Button ID="btnUpdate" runat="server" Text="Update" class=" btn btn-success btn-rounded" />
-             <asp:Button ID="btnCancel" runat="server" Text="Cancel" class="btn btn-danger" CausesValidation="False" UseSubmitBehavior="False" />   
-          </div>
+        </header>
+    </div>
+
+    <br />
+
+    <!--Form content -->
+    <div class="container"  style="margin-left: 280px">
+        <div class="form-horizontal">
+            <h2>Add New Tutorial Guide Category</h2>
+            <hr />
+
+            <div class="form-group">
+                <asp:Label ID="lblName" runat="server"  CssClass="col-md-2 control-label" Text="Tutorial Guide Category"></asp:Label>
+                <div class="col-md-12"> 
+                    <asp:TextBox ID="txtName" runat="server" CssClass="form-control" placeholder="Enter the name of the new category"></asp:TextBox>
+                </div>
+            </div>
+
+            <!--CRUD buttons -->
+            <div id="crud">
+                <asp:Button ID="btnAdd" runat="server" Text="Add" CssClass="btn btn-success" OnClick="btnAdd_Click" />
+                <asp:Button ID="btnUpdate" runat="server" Text="Update" CssClass="btn btn-warning" />
+                <asp:Button ID="btnDelete" runat="server" Text="Delete" CssClass="btn btn-danger" />
+            </div>
+            <br /><br />
+            <div class="gridview">
+                <asp:GridView ID="GridView1" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None">
+                    <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+                    <EditRowStyle BackColor="#999999" />
+                    <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                    <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+                    <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+                    <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+                    <SortedAscendingCellStyle BackColor="#E9E7E2" />
+                    <SortedAscendingHeaderStyle BackColor="#506C8C" />
+                    <SortedDescendingCellStyle BackColor="#FFFDF8" />
+                    <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
+                </asp:GridView>
+            </div>
+                  
         </div>
-      </div>
-  </div>
-</div>
+    </div> 
+
 </asp:Content>
