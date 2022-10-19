@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="EditCourseGuide.aspx.cs" Inherits="COMP3851B.Views.Admin.CourseGuide.AddCourseGuide" ValidateRequest="false" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="EditGuide.aspx.cs" Inherits="COMP3851B.Views.Admin.CourseGuide.AddCourseGuide" ValidateRequest="false" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
@@ -58,24 +58,24 @@
             <hr />
 
             <div class="form-group">
-                <asp:Label ID="lblTitle" runat="server"  CssClass="col-md-2 control-label" Text="Title"></asp:Label>
-                <div class="col-md-12"> 
+                <asp:Label ID="lblTitle" runat="server"  CssClass="col-12 control-label" Text="Title"></asp:Label>
+                    <div class="col-12"> 
                     <asp:TextBox ID="txtTitle" runat="server" CssClass="form-control" placeholder="Enter the title of the tutorial guide"></asp:TextBox>
                 </div>
             </div>
 
             <div class="form-group">
-                <asp:Label ID="Label1" runat="server"  CssClass="col-md-2 control-label" Text="Category"></asp:Label>
-                <div class="col-md-12"> 
+                <asp:Label ID="Label1" runat="server"  CssClass="col-2 control-label" Text="Category"></asp:Label>
+                <div class="col-12"> 
                     <asp:DropDownList ID="ddlCat" runat="server">
                     </asp:DropDownList>
                 </div>
             </div>
 
             <div class="form-group">
-                <asp:Label ID="lblDesc" runat="server"  CssClass="col-md-2 control-label" Text="Enter the description of the tutorial guide"></asp:Label>
-                <div class="col-md-12">
-                     <asp:TextBox ID="txtSummernote" runat="server" TextMode="MultiLine" Rows="2"></asp:TextBox>
+                <asp:Label ID="lblDesc" runat="server"  CssClass="col-2 control-label" Text="Enter the description of the tutorial guide"></asp:Label>
+                <div class="col-12">
+                     <asp:TextBox ID="txtSummernote" runat="server" TextMode="MultiLine"></asp:TextBox>
                      <asp:Label ID="lblSum" runat="server" Text="Summernote"></asp:Label>
                   </div>
              </div>

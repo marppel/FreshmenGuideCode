@@ -111,8 +111,8 @@
     <Content Include="Views\Admin\Club\AddClubEvent.aspx" />
     <Content Include="Views\Admin\Club\DisplayAllClub.aspx" />
     <Content Include="Views\Admin\Club\EditClub.aspx" />
-    <Content Include="Views\Admin\CourseGuide\EditCourseCategory.aspx" />
-    <Content Include="Views\Admin\CourseGuide\EditCourseGuide.aspx" />
+    <Content Include="Views\Admin\TutorialGuide\EditGuideCategory.aspx" />
+    <Content Include="Views\Admin\TutorialGuide\EditGuide.aspx" />
     <Content Include="Views\Admin\Sports\EditESports.aspx" />
     <Content Include="Views\Admin\Sports\EditSports.aspx" />
     <Content Include="Views\User\Career\CareerSeminar.aspx" />
@@ -244,19 +244,19 @@
     <Compile Include="Views\Admin\Club\EditClub.aspx.designer.cs">
       <DependentUpon>EditClub.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\Admin\CourseGuide\EditCourseCategory.aspx.cs">
-      <DependentUpon>EditCourseCategory.aspx</DependentUpon>
+    <Compile Include="Views\Admin\TutorialGuide\EditGuideCategory.aspx.cs">
+      <DependentUpon>EditGuideCategory.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\Admin\CourseGuide\EditCourseCategory.aspx.designer.cs">
-      <DependentUpon>EditCourseCategory.aspx</DependentUpon>
+    <Compile Include="Views\Admin\TutorialGuide\EditGuideCategory.aspx.designer.cs">
+      <DependentUpon>EditGuideCategory.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\Admin\CourseGuide\EditCourseGuide.aspx.cs">
-      <DependentUpon>EditCourseGuide.aspx</DependentUpon>
+    <Compile Include="Views\Admin\TutorialGuide\EditGuide.aspx.cs">
+      <DependentUpon>EditGuide.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\Admin\CourseGuide\EditCourseGuide.aspx.designer.cs">
-      <DependentUpon>EditCourseGuide.aspx</DependentUpon>
+    <Compile Include="Views\Admin\TutorialGuide\EditGuide.aspx.designer.cs">
+      <DependentUpon>EditGuide.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\User\Career\CareerSeminar.aspx.cs">
       <DependentUpon>CareerSeminar.aspx</DependentUpon>

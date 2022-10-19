@@ -36,19 +36,27 @@ namespace COMP3851B.Views.Admin.CourseGuide
             string desc = txtSummernote.Text;
 
             Guide gde = new Guide(id, title, desc);
-
-           int result = gde.AddGuide();
-
-            if (result == 1)
+            try
             {
-                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('SUCCESS')", true);
-           }
-            else
+                int result = gde.AddGuide();
+
+                if (result == 1)
+                {
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('SUCCESS')", true);
+               }
+                else
+                {
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('RECORD Exists!')", true);
+                }
+
+                lblSum.Text = result.ToString();
+            }
+            catch
             {
-                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('RECORD Exists!')", true);
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('ERROR')", true);
+
             }
 
-            lblSum.Text = id.ToString();
         }
     }
 }

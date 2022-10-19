@@ -57,6 +57,26 @@ namespace COMP3851B.BBL
             GuideDAO dao = new GuideDAO();
             return dao.GetAllGuideCategories();
         }
+        public Guide getOne(int id)
+        {
+            GuideDAO dao = new GuideDAO();
+            return dao.getOne(id);
+        }
+        public int DeleteCategory(int id)
+        {
+            GuideDAO dao = new GuideDAO();
+            return dao.DeleteCategory(id);
+        }
+        public int UpdateCategory(int id, string name)
+        {
+            GuideDAO dao = new GuideDAO();
+            return dao.UpdateCategory(name, id);
+        }
+        public List<Guide> SearchFor(string substring)
+        {
+            GuideDAO dao = new GuideDAO();
+            return dao.Search(substring);
+        }
 
         public int AddGuide()
         {

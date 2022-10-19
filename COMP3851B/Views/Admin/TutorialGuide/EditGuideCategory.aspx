@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="EditCourseCategory.aspx.cs" Inherits="COMP3851B.Views.Admin.CourseGuide.AddCourseCategory" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="EditGuideCategory.aspx.cs" Inherits="COMP3851B.Views.Admin.CourseGuide.AddCourseCategory" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
@@ -13,6 +13,11 @@
           width: 100%;               
           background-color:black;
           height: 1px;
+        }
+        .GVCat{
+            table-layout: fixed;
+            word-wrap: break-word;
+            width:100%;
         }
     </style>
 </asp:Content>
@@ -51,8 +56,17 @@
             <hr />
 
             <div class="form-group">
-                <asp:Label ID="lblName" runat="server"  CssClass="col-md-2 control-label" Text="Tutorial Guide Category"></asp:Label>
-                <div class="col-md-12"> 
+                <div class="row">
+                    <asp:Label ID="lblID" runat="server"  CssClass="col-12 control-label" Text="Category ID: (No row selected)"></asp:Label>
+                </div>
+            </div>
+
+            <br />
+
+            <div class="form-group">
+                <asp:Label ID="lblName" runat="server"  CssClass="col-12 control-label" Text="Category Name"></asp:Label>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Name is required" ControlToValidate="txtName" ForeColor="Red"></asp:RequiredFieldValidator>
+                <div class="col-12"> 
                     <asp:TextBox ID="txtName" runat="server" CssClass="form-control" placeholder="Enter the name of the new category"></asp:TextBox>
                 </div>
             </div>
@@ -62,14 +76,14 @@
             <!--CRUD buttons -->
             <div id="crud">
                 <asp:Button ID="btnAdd" runat="server" Text="Add" CssClass="btn btn-success" OnClick="btnAdd_Click" />
-                <asp:Button ID="btnUpdate" runat="server" Text="Update" CssClass="btn btn-warning" />
-                <asp:Button ID="btnDelete" runat="server" Text="Delete" CssClass="btn btn-danger" />
+                <asp:Button ID="btnSearch" runat="server" Text="Search" Class="btn btn-secondary" style="color:white" OnClick="btnSearch_Click"/>
             </div>
+
             <br /><br />
 
             <!-- GridView -->
-            <div class="gridview">
-                <asp:GridView ID="GVCat" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" AutoGenerateColumns="false">
+            <div class="col-12">
+                <asp:GridView ID="GVCat" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" AutoGenerateColumns="false" OnRowDeleting="GVCat_RowDeleting" DataKeyNames="gdeCatID" OnSelectedIndexChanged="GVCat_SelectedIndexChanged">
                     <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                     <EditRowStyle BackColor="#999999" />
                     <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
@@ -83,8 +97,10 @@
                     <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
 
                     <Columns>
-                        <asp:BoundField HeaderText="Category Id" DataField ="gdeCatId" />
-                        <asp:BoundField HeaderText="Category Name" DataField ="gdeCatName" />
+                        <asp:BoundField HeaderText="Category Id" DataField ="gdeCatId" ItemStyle-Width="20%"/>
+                        <asp:BoundField HeaderText="Category Name" DataField ="gdeCatName" ItemStyle-Width="60%"/>
+                        <asp:CommandField SelectText="Edit" ShowSelectButton="True" />
+                        <asp:CommandField ShowDeleteButton="True" />
                     </Columns>
                 </asp:GridView>
             </div>
