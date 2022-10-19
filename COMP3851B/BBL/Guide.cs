@@ -16,6 +16,7 @@ namespace COMP3851B.BBL
         public int gdeID { get; set; }
         public string gdeTitle { get; set; }
         public string gdeDesc { get; set; }
+        public string gdeThumbnail { get; set; }
 
 
         //Class
@@ -33,16 +34,21 @@ namespace COMP3851B.BBL
             this.gdeCatID = gdecatid;
             this.gdeCatName = gdecatname;
         }
-        public Guide(int gdeid, string gdetitle, string gdedesc)
+        public Guide(int gdecatid, string gdetitle, string gdedesc, string imagepath)
         {
-            this.gdeCatID = gdeid;
+            this.gdeCatID = gdecatid;
             this.gdeTitle = gdetitle;
             this.gdeDesc = gdedesc;
+            this.gdeThumbnail = imagepath;
         }
-        public Guide(string gdetitle, string gdedesc)
+        public Guide(int gdeid, string gdetitle, string gdedesc, string imagepath, int gdecatid, string gdecatname)
         {
+            this.gdeID = gdeid;
             this.gdeTitle = gdetitle;
             this.gdeDesc = gdedesc;
+            this.gdeThumbnail = imagepath;
+            this.gdeCatID = gdecatid;
+            this.gdeCatName = gdecatname;
         }
 
 
@@ -82,6 +88,21 @@ namespace COMP3851B.BBL
         {
             GuideDAO dao = new GuideDAO();
             return (dao.InsertGuide(this));
+        }
+        public List<Guide> GetAllGuides()
+        {
+            GuideDAO dao = new GuideDAO();
+            return dao.GetAllGuides();
+        }
+        public int DeleteGuide(int id)
+        {
+            GuideDAO dao = new GuideDAO();
+            return dao.DeleteGuide(id);
+        }
+        public Guide getOneGuide(int id)
+        {
+            GuideDAO dao = new GuideDAO();
+            return dao.getOneGuide(id);
         }
     }
 }

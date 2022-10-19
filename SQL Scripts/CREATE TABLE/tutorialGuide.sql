@@ -1,7 +1,7 @@
 USE [COMP3851B]
 GO
 
-/****** Object:  Table [dbo].[tutorialGuide]    Script Date: 18/10/2022 8:47:25 pm ******/
+/****** Object:  Table [dbo].[tutorialGuide]    Script Date: 19/10/2022 11:22:12 pm ******/
 SET ANSI_NULLS ON
 GO
 
@@ -13,6 +13,7 @@ CREATE TABLE [dbo].[tutorialGuide](
 	[gdeCatID] [int] NOT NULL,
 	[gdeTitle] [nvarchar](255) NULL,
 	[gdeDesc] [nvarchar](max) NULL,
+	[gdeThumbnail] [nvarchar](max) NULL,
  CONSTRAINT [PK__courseGu__8DAA4F7AFBD74078] PRIMARY KEY CLUSTERED 
 (
 	[gdeID] ASC

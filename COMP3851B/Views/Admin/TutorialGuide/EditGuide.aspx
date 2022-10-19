@@ -59,13 +59,27 @@
 
             <div class="form-group">
                 <asp:Label ID="lblTitle" runat="server"  CssClass="col-12 control-label" Text="Title"></asp:Label>
-                    <div class="col-12"> 
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="(Title cannot be empty)" ControlToValidate="txtTitle" ForeColor="Red"></asp:RequiredFieldValidator>
+                <div class="col-12"> 
                     <asp:TextBox ID="txtTitle" runat="server" CssClass="form-control" placeholder="Enter the title of the tutorial guide"></asp:TextBox>
                 </div>
             </div>
 
             <div class="form-group">
+                <asp:Label ID="lblImage" runat="server"  CssClass="col-12 control-label" Text="Thumbnail Image"></asp:Label>
+                <div class="col-12">
+                    <asp:Image ID="imgThumbnail" ImageUrl="../../../Images/insertimage.png" runat="server" class="avatar img-thumbnail" height="150" width="150"/>
+                </div>
+                <br />
+                <div class="col-12"> 
+                    <asp:FileUpload ID="UploadTmbnail" runat="server" />
+                </div>
+                <br />
+            </div>
+
+            <div class="form-group">
                 <asp:Label ID="Label1" runat="server"  CssClass="col-2 control-label" Text="Category"></asp:Label>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" InitialValue="0" runat="server" ErrorMessage="(A category must be selected)" ControlToValidate="ddlCat" ForeColor="Red"></asp:RequiredFieldValidator>
                 <div class="col-12"> 
                     <asp:DropDownList ID="ddlCat" runat="server">
                     </asp:DropDownList>
@@ -74,21 +88,23 @@
 
             <div class="form-group">
                 <asp:Label ID="lblDesc" runat="server"  CssClass="col-2 control-label" Text="Enter the description of the tutorial guide"></asp:Label>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="(Description cannot be empty)" ControlToValidate="txtSummernote" ForeColor="Red"></asp:RequiredFieldValidator>
                 <div class="col-12">
-                     <asp:TextBox ID="txtSummernote" runat="server" TextMode="MultiLine"></asp:TextBox>
-                     <asp:Label ID="lblSum" runat="server" Text="Summernote"></asp:Label>
-                  </div>
+                    <asp:TextBox ID="txtSummernote" runat="server" TextMode="MultiLine"></asp:TextBox>
+                    <asp:Label ID="lblSum" runat="server" Text="Summernote"></asp:Label>
+                </div>
              </div>
 
             <!--CRUD buttons -->
             <div id="crud">
-                <asp:Button ID="btnAdd" runat="server" Text="Add" CssClass="btn btn-success" OnClick="btnAdd_Click" />
-                <asp:Button ID="btnUpdate" runat="server" Text="Update" CssClass="btn btn-warning" />
-                <asp:Button ID="btnDelete" runat="server" Text="Delete" CssClass="btn btn-danger" />
-            </div>
+                <asp:Button ID="btnAdd" runat="server" Text="Add" CssClass="btn btn-success" OnClick="btnAdd_Click"/>
+                <asp:Button ID="btnSearch" runat="server" Text="Search" Class="btn btn-secondary" style="color:white" OnClick="btnSearch_Click"/>
+            </div>            
+            
             <br /><br />
+            
             <div class="gridview">
-                <asp:GridView ID="GridView1" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None">
+                <asp:GridView ID="GVgde" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" AutoGenerateColumns="false" DataKeyNames="gdeID" OnRowDeleting="GVgde_RowDeleting" OnSelectedIndexChanged="GVgde_SelectedIndexChanged">
                     <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                     <EditRowStyle BackColor="#999999" />
                     <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
@@ -100,6 +116,19 @@
                     <SortedAscendingHeaderStyle BackColor="#506C8C" />
                     <SortedDescendingCellStyle BackColor="#FFFDF8" />
                     <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
+
+                    <Columns>
+                        <asp:BoundField HeaderText="Guide Id" DataField ="gdeID" ItemStyle-Width="20%"/>
+                        <asp:BoundField HeaderText="Title" DataField ="gdeTitle" ItemStyle-Width="60%"/>                        
+                        <asp:ImageField HeaderText="Image" DataImageUrlField="gdeThumbnail" ReadOnly="True" >
+                            <ControlStyle Height="100px" Width="100px" />
+                        </asp:ImageField>
+                        <asp:BoundField HeaderText="Description" DataField ="gdeDesc" HtmlEncode="false" ItemStyle-Width="60%"/>
+                        <asp:BoundField HeaderText="Category Id" DataField ="gdeCatID" ItemStyle-Width="60%"/>
+                        <asp:BoundField HeaderText="Category Name" DataField ="gdeCatName" ItemStyle-Width="60%"/>
+                        <asp:CommandField SelectText="Edit" ShowSelectButton="True" />
+                        <asp:CommandField ShowDeleteButton="True" />
+                    </Columns>
                 </asp:GridView>
             </div>
                   

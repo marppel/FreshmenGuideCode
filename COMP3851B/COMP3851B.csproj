@@ -80,7 +80,7 @@
     <Content Include="CSS\UserStylesheet.css" />
     <Content Include="Images\compLab.jpg" />
     <Content Include="Images\graphic.jpg" />
-    <Content Include="Images\insert image.png" />
+    <Content Include="Images\insertimage.png" />
     <Content Include="Images\library.jpg" />
     <Content Include="Images\man.png" />
     <Content Include="Images\marketing.jpg" />

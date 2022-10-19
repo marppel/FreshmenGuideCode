@@ -17,7 +17,7 @@ namespace COMP3851B.Views.Admin.CourseGuide
             if (!IsPostBack)
             {
                 txtName.Text = "";
-                lblID.Text = "Category ID: ";
+                lblID.Text = "Category ID: (No row selected)";
 
                 Guide gde = new Guide();
                 gdeList = gde.GetAllCategories();
@@ -52,7 +52,7 @@ namespace COMP3851B.Views.Admin.CourseGuide
                     }
                     else
                     {
-                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('A record for this item already exists.')", true);
+                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('A record for this item already exists. Please enter a different item.')", true);
                     }
                 }
                 catch
@@ -143,7 +143,6 @@ namespace COMP3851B.Views.Admin.CourseGuide
                 ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('An error has occured while trying to select a row to edit. Please contact the developers about the issue.')", true);
             }
 
-
         }
 
         protected void btnSearch_Click(object sender, EventArgs e)
@@ -153,7 +152,7 @@ namespace COMP3851B.Views.Admin.CourseGuide
             if (btnName == "Cancel")
             {
                 txtName.Text = "";
-                lblID.Text = "Category ID: ";
+                lblID.Text = "Category ID: (No row selected)";
 
                 btnAdd.Text = "Add";
                 btnSearch.Text = "Search";

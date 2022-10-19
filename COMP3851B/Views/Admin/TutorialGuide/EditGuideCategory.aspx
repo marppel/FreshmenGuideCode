@@ -65,7 +65,7 @@
 
             <div class="form-group">
                 <asp:Label ID="lblName" runat="server"  CssClass="col-12 control-label" Text="Category Name"></asp:Label>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Name is required" ControlToValidate="txtName" ForeColor="Red"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="(Name cannot be empty)" ControlToValidate="txtName" ForeColor="Red"></asp:RequiredFieldValidator>
                 <div class="col-12"> 
                     <asp:TextBox ID="txtName" runat="server" CssClass="form-control" placeholder="Enter the name of the new category"></asp:TextBox>
                 </div>

@@ -68,7 +68,7 @@ namespace COMP3851B.DAL
             string DBConnect = ConfigurationManager.ConnectionStrings["FunUniversityConnectionString"].ConnectionString;
             SqlConnection myConn = new SqlConnection(DBConnect);
 
-            string sqlStmt = "IF NOT EXISTS(SELECT 1 FROM tutorialGuide WHERE gdeTitle=@paragdetitle AND gdeDesc=@gdedesc AND gdeCatID=@paracatid) BEGIN INSERT INTO tutorialGuide(gdeTitle, gdeDesc, gdeCatID) VALUES (@paragdetitle, @gdedesc, @paracatid) END ELSE BEGIN RETURN END";
+            string sqlStmt = "IF NOT EXISTS(SELECT 1 FROM tutorialGuide WHERE gdeTitle=@paragdetitle AND gdeCatID=@paracatid AND gdeThumbnail=@paraimagepath) BEGIN INSERT INTO tutorialGuide(gdeTitle, gdeDesc, gdeCatID, gdeThumbnail) VALUES (@paragdetitle, @gdedesc, @paracatid, @paraimagepath) END ELSE BEGIN RETURN END";
 
             int result = 0;    // Execute NonQuery return an integer value
             SqlCommand sqlCmd = new SqlCommand(sqlStmt, myConn);
@@ -76,6 +76,7 @@ namespace COMP3851B.DAL
             sqlCmd.Parameters.AddWithValue("@paracatid", gde.gdeCatID);
             sqlCmd.Parameters.AddWithValue("@paragdetitle", gde.gdeTitle);
             sqlCmd.Parameters.AddWithValue("@gdedesc", gde.gdeDesc);
+            sqlCmd.Parameters.AddWithValue("@paraimagepath", gde.gdeThumbnail);
 
             myConn.Open();
             result = sqlCmd.ExecuteNonQuery();
@@ -184,6 +185,89 @@ namespace COMP3851B.DAL
                 }
             }
             return gdeList;
+        }
+        public List<Guide> GetAllGuides()
+        {
+            string DBConnect = ConfigurationManager.ConnectionStrings["FunUniversityConnectionString"].ConnectionString;
+            SqlConnection myConn = new SqlConnection(DBConnect);
+
+            string sqlstmt = "SELECT gdeTitle, gdeDesc, gdeThumbnail, tgc.gdeCatName, tg.gdeCatID, tg.gdeID FROM tutorialGuide tg INNER JOIN tutorialGuideCategory tgc on tgc.gdeCatID = tg.gdeCatID";
+
+            SqlDataAdapter da = new SqlDataAdapter(sqlstmt, myConn);
+
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+
+            List<Guide> gList = new List<Guide>();
+
+            int rec_cnt = ds.Tables[0].Rows.Count;
+            if (rec_cnt == 0)
+            {
+                gList = null;
+            }
+            else
+            {
+                foreach (DataRow row in ds.Tables[0].Rows)
+                {
+                    int id = Convert.ToInt32(row["gdeID"]);
+                    int catid = Convert.ToInt32(row["gdeCatID"]);
+                    string title = row["gdeTitle"].ToString();
+                    string thumbnail = row["gdeThumbnail"].ToString();
+                    string catname = row["gdeCatName"].ToString();
+                    string desc = row["gdeDesc"].ToString();
+
+                    Guide objRate = new Guide(id, title, desc, thumbnail, catid, catname);
+                    gList.Add(objRate);
+                }
+            }
+            return gList;
+        }
+        public int DeleteGuide(int gdeid)
+        {
+            string DBConnect = ConfigurationManager.ConnectionStrings["FunUniversityConnectionString"].ConnectionString;
+            SqlConnection myConn = new SqlConnection(DBConnect);
+
+            string sqlStmt = "Delete tutorialGuide where gdeID = @paraid";
+
+            int result = 0;    // Execute NonQuery return an integer value
+            SqlCommand sqlCmd = new SqlCommand(sqlStmt, myConn);
+            sqlCmd.Parameters.AddWithValue("@paraid", gdeid);
+
+            myConn.Open();
+            result = sqlCmd.ExecuteNonQuery();
+
+            myConn.Close();
+
+            return result;
+        }
+        public Guide getOneGuide(int id)
+        {
+            string DBConnect = ConfigurationManager.ConnectionStrings["FunUniversityConnectionString"].ConnectionString;
+            SqlConnection myConn = new SqlConnection(DBConnect);
+
+            string sqlstmt = "SELECT gdeID, gdeTitle, gdeThumbnail, gdeDesc, tg.gdeCatID, gdeCatName FROM tutorialGuide tg INNER JOIN tutorialGuideCategory tgc ON tgc.gdeCatID = tg.gdeCatID WHERE gdeID = @paraid";
+            SqlDataAdapter da = new SqlDataAdapter(sqlstmt, myConn);
+
+            da.SelectCommand.Parameters.AddWithValue("@paraid", id);
+
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+
+            Guide gde = null;
+            int rec_cnt = ds.Tables[0].Rows.Count;
+            if (rec_cnt == 1)
+            {
+                DataRow row = ds.Tables[0].Rows[0];
+                int gdeid = Convert.ToInt32(row["gdeID"].ToString());
+                string title = Convert.ToString(row["gdeTitle"]);
+                string desc = Convert.ToString(row["gdeDesc"]);
+                string imagepath = Convert.ToString(row["gdeThumbnail"]);
+                int catid = Convert.ToInt32(row["gdeCatID"].ToString());
+                string catname = Convert.ToString(row["gdeCatName"]);
+
+                gde = new Guide(gdeid, title, desc, imagepath, catid, catname);
+            }
+            return gde;
         }
     }
 }
