@@ -41,6 +41,13 @@ namespace COMP3851B.BBL
             this.gdeDesc = gdedesc;
             this.gdeThumbnail = imagepath;
         }
+        public Guide(string gdetitle, string gdedesc, string imagepath, int catid)
+        {
+            this.gdeTitle = gdetitle;
+            this.gdeDesc = gdedesc;
+            this.gdeThumbnail = imagepath;
+            this.gdeCatID = catid;
+        }
         public Guide(int gdeid, string gdetitle, string gdedesc, string imagepath, int gdecatid, string gdecatname)
         {
             this.gdeID = gdeid;
@@ -103,6 +110,11 @@ namespace COMP3851B.BBL
         {
             GuideDAO dao = new GuideDAO();
             return dao.getOneGuide(id);
+        }
+        public int UpdateGuide(int id)
+        {
+            GuideDAO dao = new GuideDAO();
+            return dao.UpdateGuide(this, id);
         }
     }
 }

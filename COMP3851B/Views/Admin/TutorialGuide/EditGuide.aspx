@@ -58,6 +58,12 @@
             <hr />
 
             <div class="form-group">
+                <div class="row">
+                    <asp:Label ID="lblID" runat="server"  CssClass="col-12 control-label" Text="Guide ID: (No row selected)"></asp:Label>
+                </div>
+            </div>
+
+            <div class="form-group">
                 <asp:Label ID="lblTitle" runat="server"  CssClass="col-12 control-label" Text="Title"></asp:Label>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="(Title cannot be empty)" ControlToValidate="txtTitle" ForeColor="Red"></asp:RequiredFieldValidator>
                 <div class="col-12"> 
@@ -72,7 +78,7 @@
                 </div>
                 <br />
                 <div class="col-12"> 
-                    <asp:FileUpload ID="UploadTmbnail" runat="server" />
+                    <asp:FileUpload ID="UploadTmbnail" runat="server" onchange="img();"/>
                 </div>
                 <br />
             </div>
@@ -160,4 +166,15 @@
             document.getElementById("#<%= txtSummernote.ClientID %>").value = $('#<%= txtSummernote.ClientID %>').summernote('code');
         }
     </script>
+
+     <script>
+         function img() {
+             var url = inputToURL(document.getElementById("<%=UploadTmbnail.ClientID %>"));
+             document.getElementById("<%=imgThumbnail.ClientID %>").src = url;
+         }
+         function inputToURL(inputElement) {
+             var file = inputElement.files[0];
+             return window.URL.createObjectURL(file);
+         }
+     </script>
 </asp:Content>

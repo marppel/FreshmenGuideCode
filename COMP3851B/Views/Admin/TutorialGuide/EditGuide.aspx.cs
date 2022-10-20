@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
+using System.Text.RegularExpressions;
 using System.Web.UI.WebControls;
 using COMP3851B.BBL;
 using System.IO;
@@ -27,6 +28,8 @@ namespace COMP3851B.Views.Admin.CourseGuide
                 ddlCat.DataValueField = "gdeCatID";
                 ddlCat.DataSource = catList;
                 ddlCat.DataBind();
+
+                lblID.Text = "Guide ID: (No row selected)";
 
                 gdeList = gde.GetAllGuides();
                 GVgde.DataSource = gdeList;
@@ -92,8 +95,52 @@ namespace COMP3851B.Views.Admin.CourseGuide
             }
             else
             {
-                //save
-                //switch button name
+                string title = txtTitle.Text;
+                int catid = Convert.ToInt32(ddlCat.SelectedValue);
+                string desc = txtSummernote.Text;
+                int id = Int32.Parse(Regex.Match(lblID.Text, @"\d+").Value);
+
+                string fileName = Path.GetFileName(UploadTmbnail.PostedFile.FileName);
+                if (fileName == "")
+                {
+                    fileName = "insertimage.png";
+                }
+                string filePath = "~/uploads/" + fileName;
+
+                UploadTmbnail.PostedFile.SaveAs(Server.MapPath(filePath));
+
+                Guide gde = new Guide(title, desc, filePath, catid);
+
+                try
+                {
+                    int result = gde.UpdateGuide(id);
+
+                    if (result == 1)
+                    {
+                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Item updated successfully.')", true);
+
+                        txtTitle.Text = "";
+                        ddlCat.SelectedValue = "0";
+                        UploadTmbnail.Attributes.Clear();
+                        txtSummernote.Text = "";
+
+                        gdeList = gde.GetAllGuides();
+                        GVgde.DataSource = gdeList;
+                        GVgde.DataBind();
+
+                        btnAdd.Text = "Add";
+                        btnSearch.Text = "Search";
+                    }
+                    else
+                    {
+                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Unable to update item. Please try again.')", true);
+                    }
+                }
+                catch
+                {
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('An error has occured when updating an item. Please contact the developers about the issue.')", true);
+
+                }
             }
         }
         protected void btnSearch_Click(object sender, EventArgs e)
@@ -110,6 +157,7 @@ namespace COMP3851B.Views.Admin.CourseGuide
                 ddlCat.SelectedValue = "0";
                 UploadTmbnail.Attributes.Clear();
                 txtSummernote.Text = "";
+                lblID.Text = "Guide ID: (No row selected)";
 
                 btnAdd.Text = "Add";
                 btnSearch.Text = "Search";
@@ -159,6 +207,7 @@ namespace COMP3851B.Views.Admin.CourseGuide
                 ddlCat.SelectedValue = gde.gdeCatID.ToString();
                 txtSummernote.Text = gde.gdeDesc;
                 imgThumbnail.ImageUrl = gde.gdeThumbnail;
+                lblID.Text = "Guide ID: " + gde.gdeID.ToString();
 
                 btnAdd.Text = "Save";
                 btnSearch.Text = "Cancel";

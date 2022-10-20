@@ -269,5 +269,28 @@ namespace COMP3851B.DAL
             }
             return gde;
         }
+        public int UpdateGuide(Guide gde, int id)
+        {
+            string DBConnect = ConfigurationManager.ConnectionStrings["FunUniversityConnectionString"].ConnectionString;
+            SqlConnection myConn = new SqlConnection(DBConnect);
+
+            string sqlStmt = "UPDATE tutorialGuide SET gdeCatID=@paracatid, gdeTitle=@paratitle, gdeDesc=@paradesc, gdeThumbnail=@parathumbnail WHERE gdeID=@paraid";
+
+            int result = 0;    // Execute NonQuery return an integer value
+            SqlCommand sqlCmd = new SqlCommand(sqlStmt, myConn);
+
+            sqlCmd.Parameters.AddWithValue("@paracatid", gde.gdeCatID);
+            sqlCmd.Parameters.AddWithValue("@paratitle", gde.gdeTitle);
+            sqlCmd.Parameters.AddWithValue("@paradesc", gde.gdeDesc);
+            sqlCmd.Parameters.AddWithValue("@parathumbnail", gde.gdeThumbnail);
+            sqlCmd.Parameters.AddWithValue("@paraid", id);
+
+            myConn.Open();
+            result = sqlCmd.ExecuteNonQuery();
+
+            myConn.Close();
+
+            return result;
+        }
     }
 }
