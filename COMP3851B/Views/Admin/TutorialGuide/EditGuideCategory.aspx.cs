@@ -101,7 +101,6 @@ namespace COMP3851B.Views.Admin.CourseGuide
                     ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('An error has occured when updating an item. Please contact the developers about the issue.')", true);
                 }
             }
-
         }
 
         protected void GVCat_RowDeleting(object sender, GridViewDeleteEventArgs e)
@@ -132,7 +131,6 @@ namespace COMP3851B.Views.Admin.CourseGuide
             {
                 ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('An error has occured when deleting item row. Please contact the developers about the issue.')", true);
             }
-
         }
 
         protected void GVCat_SelectedIndexChanged(object sender, EventArgs e)
@@ -159,7 +157,6 @@ namespace COMP3851B.Views.Admin.CourseGuide
             {
                 ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('An error has occured while trying to select a row to edit. Please contact the developers about the issue.')", true);
             }
-
         }
 
         protected void btnSearch_Click(object sender, EventArgs e)
@@ -193,7 +190,6 @@ namespace COMP3851B.Views.Admin.CourseGuide
                 {
                     ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('An error has occured while trying to search for a row. Please contact the developers about the issue.')", true);
                 }
-
             }
         }
 
