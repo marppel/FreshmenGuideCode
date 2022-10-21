@@ -56,9 +56,7 @@
             <hr />
 
             <div class="form-group">
-                <div class="row">
-                    <asp:Label ID="lblID" runat="server"  CssClass="col-12 control-label" Text="Category ID: (No row selected)"></asp:Label>
-                </div>
+                <asp:Label ID="lblID" runat="server"  CssClass="col-12 control-label" Text="Category ID: (No row selected)"></asp:Label>
             </div>
 
             <br />
@@ -83,11 +81,12 @@
 
             <!-- GridView -->
             <div class="col-12">
-                <asp:GridView ID="GVCat" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" AutoGenerateColumns="false" OnRowDeleting="GVCat_RowDeleting" DataKeyNames="gdeCatID" OnSelectedIndexChanged="GVCat_SelectedIndexChanged">
+                <asp:GridView ID="GVCat" runat="server" CellPadding="10" ForeColor="#333333" GridLines="None" AutoGenerateColumns="false" OnRowDeleting="GVCat_RowDeleting" DataKeyNames="gdeCatID" OnSelectedIndexChanged="GVCat_SelectedIndexChanged" AllowPaging="True" OnPageIndexChanging="GVCat_PageIndexChanging">
                     <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                     <EditRowStyle BackColor="#999999" />
                     <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
                     <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                    <PagerSettings FirstPageText="First" LastPageText="Last" Mode="NumericFirstLast" PageButtonCount="4" />
                     <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
                     <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
                     <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
@@ -97,8 +96,12 @@
                     <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
 
                     <Columns>
-                        <asp:BoundField HeaderText="Category Id" DataField ="gdeCatId" ItemStyle-Width="20%"/>
-                        <asp:BoundField HeaderText="Category Name" DataField ="gdeCatName" ItemStyle-Width="60%"/>
+                        <asp:BoundField HeaderText="Category Id" DataField ="gdeCatId" ItemStyle-Width="20%">
+<ItemStyle Width="20%"></ItemStyle>
+                        </asp:BoundField>
+                        <asp:BoundField HeaderText="Category Name" DataField ="gdeCatName" ItemStyle-Width="60%">
+<ItemStyle Width="60%"></ItemStyle>
+                        </asp:BoundField>
                         <asp:CommandField SelectText="Edit" ShowSelectButton="True" />
                         <asp:CommandField ShowDeleteButton="True" />
                     </Columns>

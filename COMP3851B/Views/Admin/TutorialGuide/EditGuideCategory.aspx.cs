@@ -175,5 +175,16 @@ namespace COMP3851B.Views.Admin.CourseGuide
 
             }
         }
+
+        protected void GVCat_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            GVCat.PageIndex = e.NewPageIndex;
+
+            Guide gde = new Guide();
+            gdeList = gde.GetAllCategories();
+
+            GVCat.DataSource = gdeList;
+            GVCat.DataBind();
+        }
     }
 }

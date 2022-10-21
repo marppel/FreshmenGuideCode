@@ -29,6 +29,10 @@ namespace COMP3851B.Views.Admin.CourseGuide
                 ddlCat.DataSource = catList;
                 ddlCat.DataBind();
 
+                txtTitle.Text = "";
+                ddlCat.SelectedValue = "0";
+                UploadTmbnail.Attributes.Clear();
+                txtSummernote.Text = "";
                 lblID.Text = "Guide ID: (No row selected)";
 
                 gdeList = gde.GetAllGuides();
@@ -77,6 +81,7 @@ namespace COMP3851B.Views.Admin.CourseGuide
                         ddlCat.SelectedValue = "0";
                         UploadTmbnail.Attributes.Clear();
                         txtSummernote.Text = "";
+                        lblID.Text = "Guide ID: (No row selected)";
 
                         gdeList = gde.GetAllGuides();
                         GVgde.DataSource = gdeList;
@@ -103,7 +108,7 @@ namespace COMP3851B.Views.Admin.CourseGuide
                 string fileName = Path.GetFileName(UploadTmbnail.PostedFile.FileName);
                 if (fileName == "")
                 {
-                    fileName = "insertimage.png";
+                    fileName = imgThumbnail.ImageUrl;
                 }
                 string filePath = "~/uploads/" + fileName;
 
@@ -123,6 +128,7 @@ namespace COMP3851B.Views.Admin.CourseGuide
                         ddlCat.SelectedValue = "0";
                         UploadTmbnail.Attributes.Clear();
                         txtSummernote.Text = "";
+                        lblID.Text = "Guide ID: (No row selected)";
 
                         gdeList = gde.GetAllGuides();
                         GVgde.DataSource = gdeList;
@@ -180,6 +186,12 @@ namespace COMP3851B.Views.Admin.CourseGuide
 
                     GVgde.DataSource = gdeList;
                     GVgde.DataBind();
+
+                    txtTitle.Text = "";
+                    ddlCat.SelectedValue = "0";
+                    UploadTmbnail.Attributes.Clear();
+                    txtSummernote.Text = "";
+                    lblID.Text = "Guide ID: (No row selected)";
                 }
                 else
                 {
@@ -216,6 +228,17 @@ namespace COMP3851B.Views.Admin.CourseGuide
             {
                 ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('An error has occured while trying to select a row to edit. Please contact the developers about the issue.')", true);
             }
+        }
+
+        protected void GVgde_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            GVgde.PageIndex = e.NewPageIndex;
+
+            Guide gde = new Guide();
+
+            gdeList = gde.GetAllGuides();
+            GVgde.DataSource = gdeList;
+            GVgde.DataBind();
         }
     }
 }

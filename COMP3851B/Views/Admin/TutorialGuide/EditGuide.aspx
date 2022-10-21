@@ -58,10 +58,10 @@
             <hr />
 
             <div class="form-group">
-                <div class="row">
-                    <asp:Label ID="lblID" runat="server"  CssClass="col-12 control-label" Text="Guide ID: (No row selected)"></asp:Label>
-                </div>
+                <asp:Label ID="lblID" runat="server"  CssClass="col-12 control-label" Text="Guide ID: (No row selected)"></asp:Label>
             </div>
+
+            <br />
 
             <div class="form-group">
                 <asp:Label ID="lblTitle" runat="server"  CssClass="col-12 control-label" Text="Title"></asp:Label>
@@ -96,9 +96,7 @@
                 <asp:Label ID="lblDesc" runat="server"  CssClass="col-2 control-label" Text="Enter the description of the tutorial guide"></asp:Label>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="(Description cannot be empty)" ControlToValidate="txtSummernote" ForeColor="Red"></asp:RequiredFieldValidator>
                 <div class="col-12">
-                    <asp:TextBox ID="txtSummernote" runat="server" TextMode="MultiLine"></asp:TextBox>
-                    <asp:Label ID="lblSum" runat="server" Text="Summernote"></asp:Label>
-                </div>
+                    <asp:TextBox ID="txtSummernote" runat="server" TextMode="MultiLine"></asp:TextBox>                </div>
              </div>
 
             <!--CRUD buttons -->
@@ -110,13 +108,14 @@
             <br /><br />
             
             <div class="gridview">
-                <asp:GridView ID="GVgde" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" AutoGenerateColumns="false" DataKeyNames="gdeID" OnRowDeleting="GVgde_RowDeleting" OnSelectedIndexChanged="GVgde_SelectedIndexChanged">
-                    <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+                <asp:GridView ID="GVgde" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" AutoGenerateColumns="false" DataKeyNames="gdeID" OnRowDeleting="GVgde_RowDeleting" OnSelectedIndexChanged="GVgde_SelectedIndexChanged" AllowPaging="True" OnPageIndexChanging="GVgde_PageIndexChanging" PageSize="1">
+                    <AlternatingRowStyle BackColor="White" ForeColor="#284775"/>
                     <EditRowStyle BackColor="#999999" />
                     <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
                     <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                    <PagerSettings FirstPageText="First" LastPageText="Last" Mode="NumericFirstLast" />
                     <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
-                    <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+                    <RowStyle BackColor="#F7F6F3" ForeColor="#333333"/>
                     <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
                     <SortedAscendingCellStyle BackColor="#E9E7E2" />
                     <SortedAscendingHeaderStyle BackColor="#506C8C" />
@@ -124,14 +123,24 @@
                     <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
 
                     <Columns>
-                        <asp:BoundField HeaderText="Guide Id" DataField ="gdeID" ItemStyle-Width="20%"/>
-                        <asp:BoundField HeaderText="Title" DataField ="gdeTitle" ItemStyle-Width="60%"/>                        
+                        <asp:BoundField HeaderText="Guide Id" DataField ="gdeID" ItemStyle-Width="20%">
+<ItemStyle Width="20%"></ItemStyle>
+                        </asp:BoundField>
+                        <asp:BoundField HeaderText="Title" DataField ="gdeTitle" ItemStyle-Width="60%">                        
+<ItemStyle Width="60%"></ItemStyle>
+                        </asp:BoundField>
                         <asp:ImageField HeaderText="Image" DataImageUrlField="gdeThumbnail" ReadOnly="True" >
                             <ControlStyle Height="100px" Width="100px" />
                         </asp:ImageField>
-                        <asp:BoundField HeaderText="Description" DataField ="gdeDesc" HtmlEncode="false" ItemStyle-Width="60%"/>
-                        <asp:BoundField HeaderText="Category Id" DataField ="gdeCatID" ItemStyle-Width="60%"/>
-                        <asp:BoundField HeaderText="Category Name" DataField ="gdeCatName" ItemStyle-Width="60%"/>
+                        <asp:BoundField HeaderText="Description" DataField ="gdeDesc" HtmlEncode="false" ItemStyle-Width="60%">
+<ItemStyle Width="60%"></ItemStyle>
+                        </asp:BoundField>
+                        <asp:BoundField HeaderText="Category Id" DataField ="gdeCatID" ItemStyle-Width="60%">
+<ItemStyle Width="60%"></ItemStyle>
+                        </asp:BoundField>
+                        <asp:BoundField HeaderText="Category Name" DataField ="gdeCatName" ItemStyle-Width="60%">
+<ItemStyle Width="60%"></ItemStyle>
+                        </asp:BoundField>
                         <asp:CommandField SelectText="Edit" ShowSelectButton="True" />
                         <asp:CommandField ShowDeleteButton="True" />
                     </Columns>
@@ -166,6 +175,15 @@
             document.getElementById("#<%= txtSummernote.ClientID %>").value = $('#<%= txtSummernote.ClientID %>').summernote('code');
         }
     </script>
+
+    <!--Dynamic image source upload -->
+    <!--***************************************************************************************
+    *    Title: "You can add it using javascript"
+    *    Author/Username: Hardik Patel
+    *    Date: 6 June, 2016
+    *    Availability: https://stackoverflow.com/questions/37655301/set-aspimage-url-when-image-is-uploaded-in-aspfileupload
+    *
+    ***************************************************************************************/-->
 
      <script>
          function img() {
