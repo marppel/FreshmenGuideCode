@@ -115,8 +115,8 @@
             <br /><br />
             
             <!-- GridView -->
-            <div class="gridview">
-                <asp:GridView ID="GVgde" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" AutoGenerateColumns="false" DataKeyNames="gdeID" OnRowDeleting="GVgde_RowDeleting" OnSelectedIndexChanged="GVgde_SelectedIndexChanged" AllowPaging="True" OnPageIndexChanging="GVgde_PageIndexChanging" PageSize="1">
+            <div class="gridview" style="overflow:auto; max-height:600px;">
+                <asp:GridView ID="GVgde" runat="server" CellPadding="10" ForeColor="#333333" GridLines="None" AutoGenerateColumns="false" DataKeyNames="gdeID" OnRowDeleting="GVgde_RowDeleting" OnSelectedIndexChanged="GVgde_SelectedIndexChanged" AllowPaging="True" OnPageIndexChanging="GVgde_PageIndexChanging" PageSize="1">
                     <AlternatingRowStyle BackColor="White" ForeColor="#284775"/>
                     <EditRowStyle BackColor="#999999" />
                     <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
@@ -131,29 +131,18 @@
                     <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
 
                     <Columns>
-                        <asp:BoundField HeaderText="Guide Id" DataField ="gdeID" ItemStyle-Width="20%">
-                        <ItemStyle Width="20%"></ItemStyle>
-                        </asp:BoundField>
-                        <asp:BoundField HeaderText="Title" DataField ="gdeTitle" ItemStyle-Width="60%">                        
-                        <ItemStyle Width="60%"></ItemStyle>
-                        </asp:BoundField>
-                        <asp:ImageField HeaderText="Image" DataImageUrlField="gdeThumbnail" ReadOnly="True" >
-                            <ControlStyle Height="100px" Width="100px" />
-                        </asp:ImageField>
-                        <asp:BoundField HeaderText="Description" DataField ="gdeDesc" HtmlEncode="false" ItemStyle-Width="60%">
-                        <ItemStyle Width="60%"></ItemStyle>
-                        </asp:BoundField>
-                        <asp:BoundField HeaderText="Category Id" DataField ="gdeCatID" ItemStyle-Width="60%">
-                        <ItemStyle Width="60%"></ItemStyle>
-                        </asp:BoundField>
-                        <asp:BoundField HeaderText="Category Name" DataField ="gdeCatName" ItemStyle-Width="60%">
-                        <ItemStyle Width="60%"></ItemStyle>
-                        </asp:BoundField>
-                        <asp:CommandField SelectText="Edit" ShowSelectButton="True" />
-                        <asp:CommandField ShowDeleteButton="True" />
+                        <asp:BoundField HeaderText="Guide Id" DataField ="gdeID" ItemStyle-Width="15%" ItemStyle-VerticalAlign="Top"></asp:BoundField>
+                        <asp:BoundField HeaderText="Title" DataField ="gdeTitle" ItemStyle-Width="20%" ItemStyle-VerticalAlign="Top"></asp:BoundField>
+                        <asp:ImageField HeaderText="Image" DataImageUrlField="gdeThumbnail" ReadOnly="True" ControlStyle-Width="150" ControlStyle-Height="150" ItemStyle-VerticalAlign="Top"></asp:ImageField>
+                        <asp:BoundField HeaderText="Description" DataField ="gdeDesc" HtmlEncode="false"></asp:BoundField>
+                        <asp:BoundField HeaderText="Category Id" DataField ="gdeCatID" ItemStyle-Width="15%" ItemStyle-VerticalAlign="Top"></asp:BoundField>
+                        <asp:BoundField HeaderText="Category Name" DataField ="gdeCatName" ItemStyle-Width="20%" ItemStyle-VerticalAlign="Top"></asp:BoundField>
+                        <asp:CommandField SelectText="Edit" ShowSelectButton="True" ItemStyle-Width="10%" ItemStyle-VerticalAlign="Top"/>
+                        <asp:CommandField ShowDeleteButton="True" ItemStyle-Width="10%" ItemStyle-VerticalAlign="Top"/>
                     </Columns>
                 </asp:GridView>
             </div>
+            <br /><br /><br /><br /><br />
                   
         </div>
     </div> 

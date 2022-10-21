@@ -136,6 +136,13 @@
   <a href="#contact">Feedback</a>
   <a href="#contact">Career Seminar</a>
 
+  <li class="dropdown-btn">Tutorial Guides
+    <i class="fa fa-caret-down"></i>
+  </li>
+  <div class="dropdown-container">
+    <a href="../TutorialGuide/EditGuideCategory.aspx">Categories</a>
+    <a href="../TutorialGuide/EditGuide.aspx">Guides</a>
+  </div>
   <li class="dropdown-btn">Sports
     <i class="fa fa-caret-down"></i>
   </li>
@@ -143,7 +150,7 @@
     <a href="../Sports/EditSports.aspx">Esports</a>
     <a href="../Sports/EditESports.aspx">Sports</a>
   </div>
-    <li class="dropdown-btn">Explore
+  <li class="dropdown-btn">Explore
     <i class="fa fa-caret-down"></i>
   </li>
   <div class="dropdown-container">

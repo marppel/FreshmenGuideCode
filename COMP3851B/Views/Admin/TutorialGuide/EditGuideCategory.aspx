@@ -81,11 +81,19 @@
                 <asp:Button ID="btnSearch" runat="server" Text="Search" Class="btn btn-secondary" style="color:white" OnClick="btnSearch_Click"/>
             </div>
 
-            <br /><br />
+            <br />
+            <hr />
+
+            <!--Notice Label -->
+            <div>
+                <asp:Label ID="lblNotice" runat="server"  CssClass="col-12 control-label" ForeColor="Red"></asp:Label>
+            </div>
+            
+            <br />
 
             <!-- GridView -->
             <div class="col-12">
-                <asp:GridView ID="GVCat" runat="server" CellPadding="10" ForeColor="#333333" GridLines="None" AutoGenerateColumns="false" OnRowDeleting="GVCat_RowDeleting" DataKeyNames="gdeCatID" OnSelectedIndexChanged="GVCat_SelectedIndexChanged" AllowPaging="True" OnPageIndexChanging="GVCat_PageIndexChanging">
+                <asp:GridView ID="GVCat" runat="server" CellPadding="100" ForeColor="#333333" GridLines="None" AutoGenerateColumns="false" OnRowDeleting="GVCat_RowDeleting" DataKeyNames="gdeCatID" OnSelectedIndexChanged="GVCat_SelectedIndexChanged" AllowPaging="True" OnPageIndexChanging="GVCat_PageIndexChanging">
                     <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                     <EditRowStyle BackColor="#999999" />
                     <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
@@ -100,14 +108,10 @@
                     <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
 
                     <Columns>
-                        <asp:BoundField HeaderText="Category Id" DataField ="gdeCatId" ItemStyle-Width="20%">
-                        <ItemStyle Width="20%"></ItemStyle>
-                        </asp:BoundField>
-                        <asp:BoundField HeaderText="Category Name" DataField ="gdeCatName" ItemStyle-Width="60%">
-                        <ItemStyle Width="60%"></ItemStyle>
-                        </asp:BoundField>
-                        <asp:CommandField SelectText="Edit" ShowSelectButton="True" />
-                        <asp:CommandField ShowDeleteButton="True" />
+                        <asp:BoundField HeaderText="Category Id" DataField ="gdeCatId" ItemStyle-Width="30%"></asp:BoundField>
+                        <asp:BoundField HeaderText="Category Name" DataField ="gdeCatName" ItemStyle-Width="50%"></asp:BoundField>
+                        <asp:CommandField SelectText="Edit" ShowSelectButton="True" ItemStyle-Width="10%"></asp:CommandField>
+                        <asp:CommandField ShowDeleteButton="True" ItemStyle-Width="10%"></asp:CommandField>
                     </Columns>
                 </asp:GridView>
             </div>

@@ -11,7 +11,7 @@ namespace COMP3851B.Views.Admin.CourseGuide
 {
     public partial class AddCourseCategory : System.Web.UI.Page
     {
-        public List<Guide> gdeList; //List for storing Guide Category data
+        public List<Guide> catList; //List for storing Guide Category data
         protected void Page_Load(object sender, EventArgs e)
         {
             //If not post back, clear all fields and bind all data to tables/lists
@@ -21,9 +21,9 @@ namespace COMP3851B.Views.Admin.CourseGuide
                 lblID.Text = "Category ID: (No row selected)";
 
                 Guide gde = new Guide();
-                gdeList = gde.GetAllCategories();
+                catList = gde.GetAllCategories();
 
-                GVCat.DataSource = gdeList;
+                GVCat.DataSource = catList;
                 GVCat.DataBind();
             }
         }
@@ -36,6 +36,8 @@ namespace COMP3851B.Views.Admin.CourseGuide
             {
                 //Get all field data
                 string name = txtName.Text;
+
+                lblNotice.Text = "";
 
                 Guide gde = new Guide(name);
 
@@ -51,8 +53,8 @@ namespace COMP3851B.Views.Admin.CourseGuide
                         txtName.Text = "";
 
                         //Rebind updated data
-                        gdeList = gde.GetAllCategories();
-                        GVCat.DataSource = gdeList;
+                        catList = gde.GetAllCategories();
+                        GVCat.DataSource = catList;
                         GVCat.DataBind();
                     }
                     else //Unsuccessful
@@ -72,6 +74,8 @@ namespace COMP3851B.Views.Admin.CourseGuide
                 string name = txtName.Text;
                 int id = Int32.Parse(Regex.Match(lblID.Text, @"\d+").Value);
 
+                lblNotice.Text = "";
+
                 Guide gde = new Guide();
 
                 try
@@ -82,10 +86,10 @@ namespace COMP3851B.Views.Admin.CourseGuide
                     if (result == 1) //Successful
                     {
                         ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Item updated successfully.')", true);
-                        
+
                         //Rebind updated data
-                        gdeList = gde.GetAllCategories();
-                        GVCat.DataSource = gdeList;
+                        catList = gde.GetAllCategories();
+                        GVCat.DataSource = catList;
                         GVCat.DataBind();
 
                         btnAdd.Text = "Add";
@@ -108,6 +112,8 @@ namespace COMP3851B.Views.Admin.CourseGuide
             //Get id of data row
             int id = Convert.ToInt32(GVCat.DataKeys[e.RowIndex].Value);
 
+            lblNotice.Text = "";
+
             Guide gde = new Guide();
             try
             {
@@ -117,9 +123,9 @@ namespace COMP3851B.Views.Admin.CourseGuide
                 if (result == 1) //Successful
                 {
                     ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Item deleted successfully.')", true);
-                    gdeList = gde.GetAllCategories();
 
-                    GVCat.DataSource = gdeList;
+                    catList = gde.GetAllCategories();
+                    GVCat.DataSource = catList;
                     GVCat.DataBind();
                 }
                 else //Unsuccessful
@@ -148,6 +154,7 @@ namespace COMP3851B.Views.Admin.CourseGuide
                 //Display retrieved item
                 txtName.Text = gde.gdeCatName;
                 lblID.Text = "Category ID: " + gde.gdeCatID.ToString();
+                lblNotice.Text = "";
 
                 //Change Add/Search buttons to Save/Cancel for editing phase
                 btnAdd.Text = "Save";
@@ -168,6 +175,7 @@ namespace COMP3851B.Views.Admin.CourseGuide
                 //Empty data rows
                 txtName.Text = "";
                 lblID.Text = "Category ID: (No row selected)";
+                lblNotice.Text = "";
 
                 //Change back Save/Cancel buttons to default Add/Search
                 btnAdd.Text = "Add";
@@ -182,9 +190,18 @@ namespace COMP3851B.Views.Admin.CourseGuide
                 try
                 {
                     //Search database for matching substring
-                    gdeList = gde.SearchFor(substring);
-                    GVCat.DataSource = gdeList;
-                    GVCat.DataBind();
+                    catList = gde.SearchFor(substring);
+
+                    if (catList == null)
+                    {
+                        lblNotice.Text = "No matching data found. Showing all data.";
+                    }
+                    else
+                    {
+                        lblNotice.Text = "";
+                        GVCat.DataSource = catList;
+                        GVCat.DataBind();
+                    }
                 }
                 catch //Internal code error
                 {
@@ -199,8 +216,8 @@ namespace COMP3851B.Views.Admin.CourseGuide
 
             //Bind page data to gridview
             Guide gde = new Guide();
-            gdeList = gde.GetAllCategories();
-            GVCat.DataSource = gdeList;
+            catList = gde.GetAllCategories();
+            GVCat.DataSource = catList;
             GVCat.DataBind();
         }
     }
