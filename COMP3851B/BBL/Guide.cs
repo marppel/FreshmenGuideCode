@@ -8,18 +8,18 @@ namespace COMP3851B.BBL
 {
     public class Guide
     {
-        //Guide Category
+        //Guide Category Properties
         public int gdeCatID { get; set; }
         public string gdeCatName { get; set; }
 
-        //Guide
+        //Guide Properties
         public int gdeID { get; set; }
         public string gdeTitle { get; set; }
         public string gdeDesc { get; set; }
         public string gdeThumbnail { get; set; }
 
 
-        //Class
+        //Object
         public Guide()
         {
 
@@ -60,6 +60,7 @@ namespace COMP3851B.BBL
 
 
         //Methods
+            //Category Methods
         public int AddCategory()
         {
             GuideDAO dao = new GuideDAO();
@@ -70,10 +71,10 @@ namespace COMP3851B.BBL
             GuideDAO dao = new GuideDAO();
             return dao.GetAllGuideCategories();
         }
-        public Guide getOne(int id)
+        public Guide GetOneCategory(int id)
         {
             GuideDAO dao = new GuideDAO();
-            return dao.getOne(id);
+            return dao.GetOneCategory(id);
         }
         public int DeleteCategory(int id)
         {
@@ -88,9 +89,10 @@ namespace COMP3851B.BBL
         public List<Guide> SearchFor(string substring)
         {
             GuideDAO dao = new GuideDAO();
-            return dao.Search(substring);
+            return dao.SearchFor(substring);
         }
 
+            //Guide Methods
         public int AddGuide()
         {
             GuideDAO dao = new GuideDAO();
@@ -106,10 +108,10 @@ namespace COMP3851B.BBL
             GuideDAO dao = new GuideDAO();
             return dao.DeleteGuide(id);
         }
-        public Guide getOneGuide(int id)
+        public Guide GetOneGuide(int id)
         {
             GuideDAO dao = new GuideDAO();
-            return dao.getOneGuide(id);
+            return dao.GetOneGuide(id);
         }
         public int UpdateGuide(int id)
         {

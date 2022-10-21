@@ -12,10 +12,11 @@ namespace COMP3851B.Views.Admin.CourseGuide
 {
     public partial class AddCourseGuide : System.Web.UI.Page
     {
-        public List<Guide> catList;
-        public List<Guide> gdeList;
+        public List<Guide> catList; //List for storing Guide Category data
+        public List<Guide> gdeList; //List for storing Guide data
         protected void Page_Load(object sender, EventArgs e)
         {
+            //If not post back, clear all fields and bind all data to tables/lists
             if (!IsPostBack)
             {
                 Guide gde = new Guide();
@@ -45,12 +46,14 @@ namespace COMP3851B.Views.Admin.CourseGuide
         {
             string btnName = (sender as Button).Text;
 
-            if (btnName == "Add")
+            if (btnName == "Add") //Button name = "Add"
             {
+                //Get all field data
                 int id = int.Parse(ddlCat.SelectedValue);
                 string title = txtTitle.Text;
                 string desc = txtSummernote.Text;
 
+                    //Get thumbnail image file and upload it to project folder
                 var folder = Server.MapPath("~/uploads/");
                 string fileName = Path.GetFileName(UploadTmbnail.PostedFile.FileName);
                 if (fileName == "")
@@ -71,9 +74,10 @@ namespace COMP3851B.Views.Admin.CourseGuide
                 Guide gde = new Guide(id, title, desc, filePath);
                 try
                 {
+                    //Add new Guide to database
                     int result = gde.AddGuide();
 
-                    if (result == 1)
+                    if (result == 1) //Successful
                     {
                         ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Item added successfully.')", true);
 
@@ -83,28 +87,31 @@ namespace COMP3851B.Views.Admin.CourseGuide
                         txtSummernote.Text = "";
                         lblID.Text = "Guide ID: (No row selected)";
 
+                        //Rebind updated data
                         gdeList = gde.GetAllGuides();
                         GVgde.DataSource = gdeList;
                         GVgde.DataBind();
                     }
-                    else
+                    else //Unsuccessful
                     {
                         ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('A record of this item already exists. Please enter a different item.')", true);
                     }
                 }
-                catch
+                catch //Internal code error
                 {
                     ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('An error has occured when adding new item. Please contact the developers about the issue.')", true);
 
                 }
             }
-            else
+            else //Button name = "Save"
             {
+                //Get all field data
                 string title = txtTitle.Text;
                 int catid = Convert.ToInt32(ddlCat.SelectedValue);
                 string desc = txtSummernote.Text;
                 int id = Int32.Parse(Regex.Match(lblID.Text, @"\d+").Value);
 
+                    //Get filename, if no new file name retrieve current thumbnail file
                 string fileName = Path.GetFileName(UploadTmbnail.PostedFile.FileName);
                 if (fileName == "")
                 {
@@ -118,9 +125,10 @@ namespace COMP3851B.Views.Admin.CourseGuide
 
                 try
                 {
+                    //Update new data
                     int result = gde.UpdateGuide(id);
 
-                    if (result == 1)
+                    if (result == 1) //Successful
                     {
                         ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Item updated successfully.')", true);
 
@@ -130,6 +138,7 @@ namespace COMP3851B.Views.Admin.CourseGuide
                         txtSummernote.Text = "";
                         lblID.Text = "Guide ID: (No row selected)";
 
+                        //Rebind updated data
                         gdeList = gde.GetAllGuides();
                         GVgde.DataSource = gdeList;
                         GVgde.DataBind();
@@ -137,12 +146,12 @@ namespace COMP3851B.Views.Admin.CourseGuide
                         btnAdd.Text = "Add";
                         btnSearch.Text = "Search";
                     }
-                    else
+                    else //Unsuccessful
                     {
                         ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Unable to update item. Please try again.')", true);
                     }
                 }
-                catch
+                catch //Internal code error
                 {
                     ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('An error has occured when updating an item. Please contact the developers about the issue.')", true);
 
@@ -153,33 +162,46 @@ namespace COMP3851B.Views.Admin.CourseGuide
         {
             string btnName = (sender as Button).Text;
 
-            if (btnName == "Search")
+            if (btnName == "Cancel") //Button name = "Cancel"
             {
-                //search
-            }
-            else
-            {
+                //Empty data rows
                 txtTitle.Text = "";
                 ddlCat.SelectedValue = "0";
                 UploadTmbnail.Attributes.Clear();
                 txtSummernote.Text = "";
                 lblID.Text = "Guide ID: (No row selected)";
 
+                //Change back Save/Cancel buttons to default Add/Search
                 btnAdd.Text = "Add";
                 btnSearch.Text = "Search";
+            }
+            else //Button name = "Search"
+            {
+                //Get CategoryName field data
+
+                try
+                {       
+                    //Search database for matching substring
+                }
+                catch //Internal code error
+                {
+
+                }
             }
         }
 
         protected void GVgde_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
+            //Get id of data row
             int id = Convert.ToInt32(GVgde.DataKeys[e.RowIndex].Value);
 
             Guide gde = new Guide();
             try
             {
+                //Delete selected row
                 int result = gde.DeleteGuide(id);
 
-                if (result == 1) //if successful
+                if (result == 1) //Successful
                 {
                     ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Item deleted successfully.')", true);
                     gdeList = gde.GetAllGuides();
@@ -193,12 +215,12 @@ namespace COMP3851B.Views.Admin.CourseGuide
                     txtSummernote.Text = "";
                     lblID.Text = "Guide ID: (No row selected)";
                 }
-                else
+                else //Unsuccessful
                 {
                     ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Deletion unsuccessful. Please try again.')", true);
                 }
             }
-            catch
+            catch //Internal code error
             {
                 ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('An error has occured when deleting item row. Please contact the developers about the issue.')", true);
             }
@@ -208,23 +230,26 @@ namespace COMP3851B.Views.Admin.CourseGuide
         {
             try
             {
+                //Get id of data row
                 GridViewRow row = GVgde.SelectedRow;
                 int id = Convert.ToInt32(row.Cells[0].Text);
 
+                //Retrieve data of selected data row using GuideID
                 Guide gde = new Guide();
-                gde = gde.getOneGuide(id);
+                gde = gde.GetOneGuide(id);
 
-                //display retrieved item
+                //Display retrieved item
                 txtTitle.Text = gde.gdeTitle;
                 ddlCat.SelectedValue = gde.gdeCatID.ToString();
                 txtSummernote.Text = gde.gdeDesc;
                 imgThumbnail.ImageUrl = gde.gdeThumbnail;
                 lblID.Text = "Guide ID: " + gde.gdeID.ToString();
 
+                //Change Add/Search buttons to Save/Cancel for editing phase
                 btnAdd.Text = "Save";
                 btnSearch.Text = "Cancel";
             }
-            catch
+            catch //Internal code error
             {
                 ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('An error has occured while trying to select a row to edit. Please contact the developers about the issue.')", true);
             }
@@ -234,8 +259,8 @@ namespace COMP3851B.Views.Admin.CourseGuide
         {
             GVgde.PageIndex = e.NewPageIndex;
 
+            //Bind page data to gridview
             Guide gde = new Guide();
-
             gdeList = gde.GetAllGuides();
             GVgde.DataSource = gdeList;
             GVgde.DataBind();

@@ -52,15 +52,19 @@
     <!--Form content -->
     <div class="container"  style="margin-left: 280px">
         <div class="form-horizontal">
+
+            <!--Form Title -->
             <h2>Tutorial Guide Category</h2>
             <hr />
 
+            <!--CategoryID -->
             <div class="form-group">
                 <asp:Label ID="lblID" runat="server"  CssClass="col-12 control-label" Text="Category ID: (No row selected)"></asp:Label>
             </div>
 
             <br />
 
+            <!--Category Name -->
             <div class="form-group">
                 <asp:Label ID="lblName" runat="server"  CssClass="col-12 control-label" Text="Category Name"></asp:Label>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="(Name cannot be empty)" ControlToValidate="txtName" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -71,7 +75,7 @@
 
             <br />
 
-            <!--CRUD buttons -->
+            <!--Add & Search / Edit& Cancel buttons -->
             <div id="crud">
                 <asp:Button ID="btnAdd" runat="server" Text="Add" CssClass="btn btn-success" OnClick="btnAdd_Click" />
                 <asp:Button ID="btnSearch" runat="server" Text="Search" Class="btn btn-secondary" style="color:white" OnClick="btnSearch_Click"/>
@@ -97,10 +101,10 @@
 
                     <Columns>
                         <asp:BoundField HeaderText="Category Id" DataField ="gdeCatId" ItemStyle-Width="20%">
-<ItemStyle Width="20%"></ItemStyle>
+                        <ItemStyle Width="20%"></ItemStyle>
                         </asp:BoundField>
                         <asp:BoundField HeaderText="Category Name" DataField ="gdeCatName" ItemStyle-Width="60%">
-<ItemStyle Width="60%"></ItemStyle>
+                        <ItemStyle Width="60%"></ItemStyle>
                         </asp:BoundField>
                         <asp:CommandField SelectText="Edit" ShowSelectButton="True" />
                         <asp:CommandField ShowDeleteButton="True" />
@@ -110,5 +114,4 @@
                   
         </div>
     </div> 
-
 </asp:Content>
