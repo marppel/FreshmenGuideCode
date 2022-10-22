@@ -118,9 +118,8 @@
     <Content Include="Views\User\Career\CareerSeminar.aspx" />
     <Content Include="Views\User\Club\ClubCategory.aspx" />
     <Content Include="Views\User\Club\ClubDetail.aspx" />
-    <Content Include="Views\User\CourseGuide\CourseGuideDetails.aspx" />
-    <Content Include="Views\User\CourseGuide\CourseGuideSearch.aspx" />
     <Content Include="Views\User\StudentFeedback\StudentFeedback.aspx" />
+    <Content Include="Views\User\TutorialGuide\GuideDetails.aspx" />
     <Content Include="Views\User\UserHomepage\UserHome.aspx" />
     <Content Include="Web.config" />
     <Content Include="Views\User\Campus\Campus History and Acihivement.aspx" />
@@ -279,20 +278,6 @@
     <Compile Include="Views\User\Club\ClubDetail.aspx.designer.cs">
       <DependentUpon>ClubDetail.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\User\CourseGuide\CourseGuideDetails.aspx.cs">
-      <DependentUpon>CourseGuideDetails.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\User\CourseGuide\CourseGuideDetails.aspx.designer.cs">
-      <DependentUpon>CourseGuideDetails.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\User\CourseGuide\CourseGuideSearch.aspx.cs">
-      <DependentUpon>CourseGuideSearch.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\User\CourseGuide\CourseGuideSearch.aspx.designer.cs">
-      <DependentUpon>CourseGuideSearch.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Views\User\Campus\Campus Event.aspx.cs">
       <DependentUpon>Campus Event.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -306,6 +291,13 @@
     </Compile>
     <Compile Include="Views\User\StudentFeedback\StudentFeedback.aspx.designer.cs">
       <DependentUpon>StudentFeedback.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\User\TutorialGuide\GuideDetails.aspx.cs">
+      <DependentUpon>GuideDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\User\TutorialGuide\GuideDetails.aspx.designer.cs">
+      <DependentUpon>GuideDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\User\User.Master.cs">
       <DependentUpon>User.Master</DependentUpon>

@@ -71,6 +71,11 @@ namespace COMP3851B.BBL
             GuideDAO dao = new GuideDAO();
             return dao.GetAllGuideCategories();
         }
+        public List<Guide> GetAllCategoriesOrdered()
+        {
+            GuideDAO dao = new GuideDAO();
+            return dao.GetAllGuideCategoriesOrdered();
+        }
         public Guide GetOneCategory(int id)
         {
             GuideDAO dao = new GuideDAO();

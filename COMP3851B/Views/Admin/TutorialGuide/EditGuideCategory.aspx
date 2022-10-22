@@ -43,7 +43,6 @@
                     <small>Admin</small>
                 </div>
             </div>
-
         </header>
     </div>
 
