@@ -10,21 +10,12 @@ namespace COMP3851B.Views.User.TutorialGuide
 {
     public partial class GuideDetails : System.Web.UI.Page
     {
-        public List<Guide> gdeList; //List for storing Guide data
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["CatID2Guide"] != null)
-            {
-                int id = Convert.ToInt32(Session["CatID2Guide"]);
-                Guide gde = new Guide();     
-                gdeList = gde.GetAllByCategory(id);
-                gde = gde.GetOneCategory(id);
-                lblHeader.InnerText = gde.gdeCatName;
-
-                DLGde.DataSource = gdeList;
-                DLGde.DataBind();
-            }
-
+            int id = Convert.ToInt32(Session["GdeID2Details"]);
+            Guide gde = new Guide();
+            gde = gde.GetOneGuide(id);
+            lbltest.Text = gde.gdeDesc;
         }
     }
 }

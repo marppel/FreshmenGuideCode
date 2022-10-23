@@ -119,6 +119,7 @@
     <Content Include="Views\User\Club\ClubCategory.aspx" />
     <Content Include="Views\User\Club\ClubDetail.aspx" />
     <Content Include="Views\User\StudentFeedback\StudentFeedback.aspx" />
+    <Content Include="Views\User\TutorialGuide\GuideCategory.aspx" />
     <Content Include="Views\User\TutorialGuide\GuideDetails.aspx" />
     <Content Include="Views\User\UserHomepage\UserHome.aspx" />
     <Content Include="Web.config" />
@@ -291,6 +292,13 @@
     </Compile>
     <Compile Include="Views\User\StudentFeedback\StudentFeedback.aspx.designer.cs">
       <DependentUpon>StudentFeedback.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\User\TutorialGuide\GuideCategory.aspx.cs">
+      <DependentUpon>GuideCategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\User\TutorialGuide\GuideCategory.aspx.designer.cs">
+      <DependentUpon>GuideCategory.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\User\TutorialGuide\GuideDetails.aspx.cs">
       <DependentUpon>GuideDetails.aspx</DependentUpon>

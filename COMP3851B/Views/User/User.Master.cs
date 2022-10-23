@@ -27,7 +27,7 @@ namespace COMP3851B.Views.User
         {
             int catid = Convert.ToInt32(LVCat.DataKeys[e.Item.DataItemIndex].Value);
             Session["CatID2Guide"] = catid;
-            Response.Redirect("../TutorialGuide/GuideDetails.aspx");
+            Response.Redirect("../TutorialGuide/GuideCategory.aspx");
         }
     }
 }
