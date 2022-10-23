@@ -53,7 +53,7 @@
                         <ul class="dropdown-menu" style="height:400px; overflow:auto">
                             <asp:ListView ID="LVCat" runat="server" DataKeyNames="gdeCatID" OnItemCommand="LVCat_ItemCommand">
                                 <ItemTemplate>
-                                    <asp:LinkButton ID="LBCat" runat="server" Class="dropdown-item" ><%#: Eval("gdeCatName") %></asp:LinkButton>
+                                    <asp:LinkButton ID="LbCat" runat="server" Class="dropdown-item" ><%#: Eval("gdeCatName") %></asp:LinkButton>
                                 </ItemTemplate>
                             </asp:ListView>
                         </ul>

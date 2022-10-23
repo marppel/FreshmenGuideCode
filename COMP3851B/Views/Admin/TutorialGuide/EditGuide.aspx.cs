@@ -71,7 +71,7 @@ namespace COMP3851B.Views.Admin.CourseGuide
                 }
                 UploadTmbnail.PostedFile.SaveAs(Server.MapPath(filePath));
 
-                Guide gde = new Guide(id, title, desc, filePath);
+                Guide gde = new Guide(title, desc, filePath,id);
                 try
                 {
                     //Add new Guide to database

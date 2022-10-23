@@ -34,9 +34,9 @@ namespace COMP3851B.BBL
             this.gdeCatID = gdecatid;
             this.gdeCatName = gdecatname;
         }
-        public Guide(int gdecatid, string gdetitle, string gdedesc, string imagepath)
+        public Guide(int gdeid, string gdetitle, string gdedesc, string imagepath)
         {
-            this.gdeCatID = gdecatid;
+            this.gdeID = gdeid;
             this.gdeTitle = gdetitle;
             this.gdeDesc = gdedesc;
             this.gdeThumbnail = imagepath;
@@ -76,21 +76,25 @@ namespace COMP3851B.BBL
             GuideDAO dao = new GuideDAO();
             return dao.GetAllGuideCategoriesOrdered();
         }
+
         public Guide GetOneCategory(int id)
         {
             GuideDAO dao = new GuideDAO();
             return dao.GetOneCategory(id);
         }
-        public int DeleteCategory(int id)
-        {
-            GuideDAO dao = new GuideDAO();
-            return dao.DeleteCategory(id);
-        }
+
         public int UpdateCategory(int id, string name)
         {
             GuideDAO dao = new GuideDAO();
             return dao.UpdateCategory(name, id);
         }
+
+        public int DeleteCategory(int id)
+        {
+            GuideDAO dao = new GuideDAO();
+            return dao.DeleteCategory(id);
+        }
+
         public List<Guide> SearchFor(string substring)
         {
             GuideDAO dao = new GuideDAO();
@@ -108,20 +112,28 @@ namespace COMP3851B.BBL
             GuideDAO dao = new GuideDAO();
             return dao.GetAllGuides();
         }
-        public int DeleteGuide(int id)
+        public List<Guide> GetAllByCategory(int id)
         {
             GuideDAO dao = new GuideDAO();
-            return dao.DeleteGuide(id);
+            return dao.GetAllByCategory(id);
         }
+
         public Guide GetOneGuide(int id)
         {
             GuideDAO dao = new GuideDAO();
             return dao.GetOneGuide(id);
         }
+
         public int UpdateGuide(int id)
         {
             GuideDAO dao = new GuideDAO();
             return dao.UpdateGuide(this, id);
+        }
+
+        public int DeleteGuide(int id)
+        {
+            GuideDAO dao = new GuideDAO();
+            return dao.DeleteGuide(id);
         }
     }
 }

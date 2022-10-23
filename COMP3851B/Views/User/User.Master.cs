@@ -26,7 +26,6 @@ namespace COMP3851B.Views.User
         protected void LVCat_ItemCommand(object sender, ListViewCommandEventArgs e)
         {
             int catid = Convert.ToInt32(LVCat.DataKeys[e.Item.DataItemIndex].Value);
-
             Session["CatID2Guide"] = catid;
             Response.Redirect("../TutorialGuide/GuideDetails.aspx");
         }

@@ -184,7 +184,8 @@
     *
     ***************************************************************************************/-->
 
-     <script>
+     <script type="text/javascript">
+         document.on
          function img() {
              var url = inputToURL(document.getElementById("<%=UploadTmbnail.ClientID %>"));
              document.getElementById("<%=imgThumbnail.ClientID %>").src = url;

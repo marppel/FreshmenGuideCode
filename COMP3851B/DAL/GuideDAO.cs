@@ -262,6 +262,42 @@ namespace COMP3851B.DAL
             return gList;
         }
 
+        public List<Guide> GetAllByCategory(int id)
+        {
+            string DBConnect = ConfigurationManager.ConnectionStrings["FunUniversityConnectionString"].ConnectionString;
+            SqlConnection myConn = new SqlConnection(DBConnect);
+
+            string sqlstmt = "SELECT gdeID, gdeTitle, gdeDesc, gdeThumbnail FROM tutorialGuide WHERE gdeCatID = @paraid ORDER BY gdeTitle ASC ";
+
+            SqlDataAdapter da = new SqlDataAdapter(sqlstmt, myConn);
+            da.SelectCommand.Parameters.AddWithValue("@paraid", id);
+
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+
+            List<Guide> gList = new List<Guide>();
+
+            int rec_cnt = ds.Tables[0].Rows.Count;
+            if (rec_cnt == 0)
+            {
+                gList = null;
+            }
+            else
+            {
+                foreach (DataRow row in ds.Tables[0].Rows)
+                {
+                    int gdeid = Convert.ToInt32(row["gdeID"]);
+                    string title = row["gdeTitle"].ToString();
+                    string desc = row["gdeDesc"].ToString();
+                    string thumbnail = row["gdeThumbnail"].ToString();
+
+                    Guide objRate = new Guide(gdeid, title, desc, thumbnail);
+                    gList.Add(objRate);
+                }
+            }
+            return gList;
+        }
+
         public Guide GetOneGuide(int id)
         {
             string DBConnect = ConfigurationManager.ConnectionStrings["FunUniversityConnectionString"].ConnectionString;
