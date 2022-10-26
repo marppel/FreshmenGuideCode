@@ -31,13 +31,13 @@
   <!-- The slideshow/carousel -->
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="../../../Images/insert%20image.png" alt="image 1" class="d-block" style="width:100% ; height : 300px">
+      <img src="../../../Images/UONBuilding.jpg" alt="image 1" class="d-block" style="width:100% ; height : 300px">
     </div>
     <div class="carousel-item">
-      <img src="../../../Images/insert%20image.png" alt="image 2" class="d-block" style="width:100%; height : 300px">
+      <img src="../../../Images/UONBuilding.jpg" alt="image 2" class="d-block" style="width:100%; height : 300px">
     </div>
     <div class="carousel-item">
-      <img src="../../../Images/insert%20image.png" alt="image 3" class="d-block" style="width:100%; height : 300px">
+      <img src="../../../Images/UONBuilding.jpg" alt="image 3" class="d-block" style="width:100%; height : 300px">
     </div>
   </div>
   
@@ -58,16 +58,16 @@
   <div class="column">
   </div>
   <div class="column">
-    <img src="../../../Images/insert%20image.png"  alt="Image2" style="width:100%">
+    <img src="../../../Images/UONBuilding.jpg"  alt="Event1" style="width:100%">
       <figcaption style="text-align :center">event 1 </figcaption>
   </div>
 
   <div class="column">
-    <img src="../../../Images/insert%20image.png" alt="Image 3" style="width:100%">
+    <img src="../../../Images/UONBuilding.jpg" alt="Event2" style="width:100%">
       <figcaption style="text-align :center">event 2</figcaption>
   </div>
       <div class="column">
-    <img src="../../../Images/insert%20image.png" alt="Image 4" style="width:100%">
+    <img src="../../../Images/UONBuilding.jpg" alt="Event3" style="width:100%">
           <figcaption style="text-align :center">event 3 </figcaption>
   </div>
     <div class="column">
@@ -81,16 +81,16 @@
   <div class="column">
   </div>
   <div class="column">
-    <img src="../../../Images/insert%20image.png" alt="Image2" style="width:100%">
+    <img src="../../../Images/UONBuilding.jpg" alt="Event4" style="width:100%">
       <figcaption style="text-align :center">event 4 </figcaption>
   </div>
 
   <div class="column">
-    <img src="../../../Images/insert%20image.png" alt="Image 3" style="width:100%">
+    <img src="../../../Images/UONBuilding.jpg" alt="Event5" style="width:100%">
       <figcaption style="text-align :center">event 5</figcaption>
   </div>
       <div class="column">
-    <img src="../../../Images/insert%20image.png" alt="Image 4" style="width:100%">
+    <img src="../../../Images/UONBuilding.jpg" alt="Event6" style="width:100%">
           <figcaption style="text-align :center">event 6 </figcaption>
   </div>
     <div class="column">
@@ -105,16 +105,16 @@
   <div class="column">
   </div>
   <div class="column">
-    <img src="../../../Images/insert%20image.png" alt="Image2" style="width:100%">
+    <img src="../../../Images/UONBuilding.jpg" alt="Event7" style="width:100%">
       <figcaption style="text-align :center">event 7 </figcaption>
   </div>
 
   <div class="column">
-    <img src="../../../Images/insert%20image.png" alt="Image 3" style="width:100%">
+    <img src="../../../Images/UONBuilding.jpg" alt="Event8" style="width:100%">
       <figcaption style="text-align :center">event 8</figcaption>
   </div>
       <div class="column">
-    <img src="../../../Images/insert%20image.png" alt="Image 4" style="width:100%">
+    <img src="../../../Images/UONBuilding.jpg" alt="Event9" style="width:100%">
           <figcaption style="text-align :center">event 9 </figcaption>
   </div>
     <div class="column">

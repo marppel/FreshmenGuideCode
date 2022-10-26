@@ -115,6 +115,8 @@
     <Content Include="Views\Admin\TutorialGuide\EditGuide.aspx" />
     <Content Include="Views\Admin\Sports\EditESports.aspx" />
     <Content Include="Views\Admin\Sports\EditSports.aspx" />
+    <Content Include="Views\Admin\Campus\Campus Event.aspx" />
+    <Content Include="Views\Admin\Campus\Campus Achievement.aspx" />
     <Content Include="Views\User\Career\CareerSeminar.aspx" />
     <Content Include="Views\User\Club\ClubCategory.aspx" />
     <Content Include="Views\User\Club\ClubDetail.aspx" />
@@ -208,6 +210,20 @@
     </Compile>
     <Compile Include="Views\Admin\Sports\EditSports.aspx.designer.cs">
       <DependentUpon>EditSports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\Campus\Campus Event.aspx.cs">
+      <DependentUpon>Campus Event.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Admin\Campus\Campus Event.aspx.designer.cs">
+      <DependentUpon>Campus Event.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\Campus\Campus Achievement.aspx.cs">
+      <DependentUpon>Campus Achievement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Admin\Campus\Campus Achievement.aspx.designer.cs">
+      <DependentUpon>Campus Achievement.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\User\Campus\Campus History and Acihivement.aspx.cs">
       <DependentUpon>Campus History and Acihivement.aspx</DependentUpon>

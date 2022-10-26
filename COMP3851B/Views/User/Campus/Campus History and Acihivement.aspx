@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Campus History and Acihivement.aspx.cs" Inherits="COMP3851B.WebForm1" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Campus History and Achivement.aspx.cs" Inherits="COMP3851B.WebForm1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
     /* Three image containers (use 25% for four, and 50% for two, etc) */
@@ -20,7 +20,7 @@
     <div style="display : flex ; align-items : center " >
         <div style ="flex-basis :40%; margin-left: 80px;">
         <!-- UON Building Image --> 
-            <img src="../../../Images/insert%20image.png" style="margin-top : 50px; margin-left: 20px; max-width : 100%"/>
+            <img src="../../../Images/UONBuilding.jpg" style="margin-top : 50px; margin-left: 20px; max-width : 100%"/>
         </div>
         <!-- text beside image -->
         <div>
@@ -34,85 +34,86 @@
 
 <!-- Row 1 campus achivement -->
     <figure>
-<div class="row">
-  <div class="column">
-  </div>
-  <div class="column">
-    <img src="../../../Images/insert%20image.png"  alt="Image2" style="width:100%">
-        </div>
-        </div>
-      <figcaption style="text-align :center">Achivement 1 </figcaption>
-  </div>
+        <div class="row">
+            <div class="column">
+            </div>
 
-  <div class="column">
-    <img src="../../../Images/insert%20image.png" alt="Image 3" style="width:100%">
+        <div class="column">
+            <img src="../../../Images/UONBuilding.jpg" alt="Achievement1" style="width:100%">
+            <figcaption style="text-align:center">Achievement1</figcaption>
         </div>
-      <figcaption style="text-align :center">Achivement 2</figcaption>
-  </div>
-      <div class="column">
-    <img src="../../../Images/insert%20image.png" alt="Image 4" style="width:100%">
-          </div>
-          <figcaption style="text-align :center">Achivement 3 </figcaption>
-  </div>
-    <div class="column">
-  </div>
+    
 
-</div>
+        <div class="column">
+            <img src="../../../Images/UONBuilding.jpg" alt="Achievement2" style="width:100%">
+            <figcaption style="text-align:center">Achievement2</figcaption>
+        </div>
+
+        <div class="column">
+            <img src="../../../Images/UONBuilding.jpg" alt="Achievement3" style="width:100%">
+            <figcaption style="text-align:center">Achievement3</figcaption>
+        </div>
+        <div class="column">
+ 
+        </div>
+
+    </div>
 </figure>
+
 <!-- Row 2 campus achivement -->
     <figure>
-    <div class="row">
-  <div class="column">
-  </div>
-  <div class="column">
-    <img src="../../../Images/insert%20image.png" alt="Image2" style="width:100%">
-        </div>
-        </div>
-      <figcaption style="text-align :center">Achivement 4 </figcaption>
-  </div>
+        <div class="row">
+            <div class="column">
+            </div>
 
-  <div class="column">
-    <img src="../../../Images/insert%20image.png" alt="Image 3" style="width:100%">
+        <div class="column">
+            <img src="../../../Images/UONBuilding.jpg" alt="Achievement4" style="width:100%">
+            <figcaption style="text-align:center">Achievement4</figcaption>
         </div>
-      <figcaption style="text-align :center">Achivement 5</figcaption>
-  </div>
-      <div class="column">
-    <img src="../../../Images/insert%20image.png" alt="Image 4" style="width:100%">
-          </div>
-          <figcaption style="text-align :center">Achivement 6 </figcaption>
-  </div>
-    <div class="column">
-  </div>
+    
 
-</div>
+        <div class="column">
+            <img src="../../../Images/UONBuilding.jpg" alt="Achievement5" style="width:100%">
+            <figcaption style="text-align:center">Achievement5</figcaption>
+        </div>
+
+        <div class="column">
+            <img src="../../../Images/UONBuilding.jpg" alt="Achievement6" style="width:100%">
+            <figcaption style="text-align:center">Achievement6</figcaption>
+        </div>
+        <div class="column">
+ 
+        </div>
+
+    </div>
 </figure>
 
 <!-- Row 3 Campus achivement -->
-    <figure>
-<div class="row">
-  <div class="column">
-  </div>
-  <div class="column">
-    <img src="../../../Images/insert%20image.png" alt="Image2" style="width:100%">
-        </div>
-        </div>
-      <figcaption style="text-align :center">Achivement 7 </figcaption>
-  </div>
+        <figure>
+        <div class="row">
+            <div class="column">
+            </div>
 
-  <div class="column">
-    <img src="../../../Images/insert%20image.png" alt="Image 3" style="width:100%">
+        <div class="column">
+            <img src="../../../Images/UONBuilding.jpg" alt="Achievement7" style="width:100%">
+            <figcaption style="text-align:center">Achievement7</figcaption>
         </div>
-      <figcaption style="text-align :center">Achivement 8</figcaption>
-  </div>
-      <div class="column">
-    <img src="../../../Images/insert%20image.png" alt="Image 4" style="width:100%">
-          </div>
-          <figcaption style="text-align :center">Achivement 9 </figcaption>
-  </div>
-    <div class="column">
-  </div>
+    
 
-</div>
+        <div class="column">
+            <img src="../../../Images/UONBuilding.jpg" alt="Achievement8" style="width:100%">
+            <figcaption style="text-align:center">Achievement8</figcaption>
+        </div>
+
+        <div class="column">
+            <img src="../../../Images/UONBuilding.jpg" alt="Achievement9" style="width:100%">
+            <figcaption style="text-align:center">Achievement9</figcaption>
+        </div>
+        <div class="column">
+ 
+        </div>
+
+    </div>
 </figure>
 
 </asp:Content>
